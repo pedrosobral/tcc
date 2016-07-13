@@ -10,8 +10,7 @@ watch:
 
 # usage: make diff OLD=HEAD~1 NEW=HEAD target
 diff:
-	./git-latexdiff --bibtex --ignore-latex-errors --latexmk $(OLD) $(NEW) --main $(MAIN).tex
-	# --type FONTSTRIKE
+	./git-latexdiff --bibtex --ignore-latex-errors --latexmk $(OLD) $(NEW) --main $(MAIN).tex #--type FONTSTRIKE
 
 clean:
 	latexmk -c

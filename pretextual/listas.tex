@@ -1,4 +1,4 @@
----
+% ---
 % inserir lista de ilustrações
 % ---
 \pdfbookmark[0]{\listfigurename}{lof}
@@ -17,10 +17,15 @@
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\begin{siglas}
- \item[ABNT] Associação Brasileira de Normas Técnicas
- \item[abnTeX] ABsurdas Normas para TeX
-\end{siglas}
+% \begin{siglas}
+%  \item[ABNT] Associação Brasileira de Normas Técnicas
+%  \item[abnTeX] ABsurdas Normas para TeX
+% \end{siglas}
+
+\renewcommand{\nomname}{Lista de abreviaturas e siglas}
+\printnomenclature
+\cleardoublepage
+
 % ---
 
 % ---

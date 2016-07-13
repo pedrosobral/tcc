@@ -10,12 +10,12 @@
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em recto e verso. Oposto a oneside
+	oneside,			% para impressão em recto e verso. Oposto a oneside
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	% chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	% section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	% subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
@@ -25,21 +25,22 @@
 \input{config}
 
 \includeonly{
-  % pretextual/fichacatalografica,
-  % pretextual/errata,
-  % pretextual/folhadeaprovacao,
-  % pretextual/dedicatoria,
-  % pretextual/agradecimentos,
-  % pretextual/epigrafe,
-  % pretextual/resumo,
-  % pretextual/listas,
+  pretextual/fichacatalografica,
+  pretextual/errata,
+  pretextual/folhadeaprovacao,
+  pretextual/dedicatoria,
+  pretextual/agradecimentos,
+  pretextual/epigrafe,
+  pretextual/resumo,
+  pretextual/listas,
   textual/introducao,
 	textual/desenvolvimento,
-  % textual/referencialteorico,
-  % postextual/anexos,
-  % postextual/apendice,
-  % postextual/glosario,
-  % postextual/indiceremissivo,
+	textual/materiaisEmetodos,
+  textual/referencialteorico,
+  postextual/anexos,
+  postextual/apendice,
+  postextual/glosario,
+  postextual/indiceremissivo,
 }
 
 % ----
@@ -57,7 +58,7 @@
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \input{pretextual/pretextual}
+\input{pretextual/pretextual}
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
