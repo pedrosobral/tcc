@@ -14,6 +14,9 @@ git-latexdiff
 *.cb
 *.cb2
 
+# nomencl package
+*.nls
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
