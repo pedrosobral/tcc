@@ -1,7 +1,10 @@
 \chapter{Material e Métodos}
+% \chapterprecis{Diga-me eu esquecerei,\\ensina-me e eu poderei lembrar,\\envolva-me e eu aprenderei.\\Benjamin Franklin}
+
+\chapterprecis{
 Neste capítulo serão descritas as fases de especificação e projeto do sistema. As
 outras fases da engenharia de software serão desenvolvidas e apresentadas na
-defesa da monografia.
+defesa da monografia.}
 
 \section{Engenharia de Software}
 
@@ -72,11 +75,66 @@ qualidade reconhecida como será descrito a seguir.
 
 \subsubsection{Plataforma}
 
-
-\begin{figure}[!htb]
+\begin{figure}[!b]
   \centering
   \caption{Diagrama de Implantação do sistema}
   \includegraphics[width=1\textwidth]{imagens/deployment_diagram}
   \fonte{Elaborado pelo autor}
   \label{fig:deployment_diagram}
 \end{figure}
+
+\begin{description}
+  \item[Servidor HTTP Apache]
+  o Servidor HTTP Apache (``httpd'') foi lançado em 1995 e desde abril de 1996 é o
+  servidor web \textit{open-source} mais popular do mundo \cite{apache2016}.
+  Segundo \citeonline{W3Techs2016} o Apache é usado por 51,3\% dos sites ativos no mundo.
+
+  \item[PostgreSQL] sistema gerenciador de banco de dados objeto relacional (SGBDOR).
+  Entre os SGBDORs \textit{open-source} mais avançados, totalmente compatível com
+  o padrão ANSI-SQL:2008, com recursos de integridade de dados includindo chaves
+  primárias compostas, chave estrangeira, restrições \textit{check, unique, not null},
+  gatilhos (\textit{triggers}), visões (\textit{views}), \textit{storage procedures}
+  e recursos avançados como columas de auto-incremento por exemplo.
+  O PostgreSQL é distribuído sobre a licença permissiva MIT \cite{postgree2016}.
+
+  \item[Python] uma das linguagens de programação mais populares do mundo,
+  figurando entre as 5 linguagens mais utilizadas \cite{TIOBE2016, RedMonk2016, PYPL2016}.
+  A escolha pela tecnologia Python como linguagem de programação se deu principalmente
+  porque um dos principais \textit{frameworks} para o desenvolvimento web \textit{Django} \cite{Django2016},
+  é escrito em Python. O \textit{Django} conta com mapeador objeto-relacional,
+  interface de administração automática, URL's elegantes, sistema de templates e
+  sistema de cache \cite{Django2016}.
+
+  \item[Ionic] é um \textit{framework open-source} para o desenvolvimento de aplicativos
+  híbridos utilizando tecnologias web como HTML, CSS e JavaScript otimizadas
+  para dispositivos móveis, com código fonte sobre a licença MIT \cite{ionic2016}.
+  Uma das principais vantagens do desenvolvimento de aplicativos híbridos é que com
+  apenas um código base é possível criar aplicativos para várias plataformas como
+  iOS, Android e Windows Phone, que aliás foi uma das razões que fez o Moodle
+  usar o Ionic como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
+
+  \item[WebSocket] é um protocolo que possibilita abrir um canal interativo de comunicação
+  entre o navegador e o servidor. Na verdade, esse canal é bidirecional (\textit{full-duplex})
+  que utiliza apenas um soquete TCP \cite{websocket2016}. A tecnologia \textit{WebSocket} será usada
+  para permitir votação e controle de frequência em tempo-real.
+\end{description}
+
+\section{Cronograma de atividades}
+
+\begin{table}[!hb]
+  \centering
+  \caption{Cronograma de atividades para o TCC II}
+  \begin{tabular}{l||cccc}
+    \hline
+    Atividade & Set/16 & Out/16 & Nov/16 & Dez/16\tabularnewline
+    \hline \hline
+    Correções da Banca & x &  &  & \tabularnewline
+    Revisão Literatura & x & x & x & x\tabularnewline
+    Implementação & x & x & x & x\tabularnewline
+    Conclusões &  &  &  & x\tabularnewline
+    Entrega TCC II &  &  &  & x\tabularnewline
+    Defesa TCC II &  &  &  & x\tabularnewline
+    Correções TCC II &  &  &  & x\tabularnewline
+    \hline
+  \end{tabular}
+\end{table}
