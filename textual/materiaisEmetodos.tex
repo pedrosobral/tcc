@@ -1,8 +1,10 @@
 \chapter{Material e Métodos}
-\chapterprecis{Neste capítulo serão descritas as fases de especificação e projeto do sistema. As
-outras fases da engenharia de software serão desenvolvidas e apresentadas na
-defesa da monografia. Ainda neste capítulo são apresentadas as ferramentas e a arquitetura
-do sistema, dando uma visão geral do que será desenvolvido.}
+\begin{quote}\normalfont\itshape\vspace*{-2\baselineskip}
+  Neste capítulo serão descritas as fases de especificação e projeto do sistema. As
+  outras fases da engenharia de software serão desenvolvidas e apresentadas na
+  defesa do TCC II. Ainda neste capítulo são apresentadas as ferramentas e a arquitetura
+  do sistema, dando uma visão geral do que será desenvolvido.
+\end{quote}
 
 \section{Engenharia de Software}
 
@@ -31,7 +33,7 @@ a camada de métodos. Os métodos da engenharia de software incluem tarefas de p
 e estimativa de software, análise de requisitos, modelagem de projeto, codificação,
 testes e manutenção. As ferramentas de engenharia de software auxiliam as camadas de
 processo e métodos, com ferramentas automatizadas, que por sua vez, quando integradas,
-é estabelecido um suporte ao desenvolvimento de software chamado CASE -
+é estabelecido um suporte ao desenvolvimento de software chamado CASE\nomenclature{CASE}{Computer Aided Software Engineering} -
 \textit{Computer Aided Software Engineering} \cite{Pressman2009, Sommerville2006}.
 
 Entre o conjunto de atividades definidas pela camada de processo, quatro são
@@ -49,7 +51,7 @@ de requisitos e às necessidades dos usuários.
 
 \subsection{Especificação do Sistema}
 Nessa primeira etapa do projeto, foi utilizada a ferramenta \textit{Astah Community} \cite{astah2016}
-para a criação de documentação em linguagem de modelagem unificada (UML). Os diagramas
+para a criação de documentação em linguagem de modelagem unificada (UML)\nomenclature{UML}{Unified Modeling Language}. Os diagramas
 de casos de uso UML são largamente utilizados para especificação de requisitos \cite{Sommerville2006}.
 A \autoref{fig:usecases} exemplifica os casos de uso do sistema, fornecendo uma
 visão geral do mesmo.
@@ -83,13 +85,15 @@ qualidade reconhecida como será descrito a seguir.
 
 \begin{description}
   \item[Servidor HTTP Apache]
-  o Servidor HTTP Apache (``httpd'') foi lançado em 1995 e desde abril de 1996 é o
+  o Servidor HTTP\nomenclature{HTTP}{Hypertext Transfer Protocol} Apache (``httpd'') foi lançado em 1995 e desde abril de 1996 é o
   servidor web \textit{open-source} mais popular do mundo \cite{apache2016}.
   Segundo \citeonline{W3Techs2016} o Apache é usado por 51,3\% dos sites ativos no mundo.
 
   \item[PostgreSQL] sistema gerenciador de banco de dados objeto relacional (SGBDOR).
-  Entre os SGBDORs \textit{open-source} mais avançados, totalmente compatível com
-  o padrão ANSI-SQL:2008, com recursos de integridade de dados includindo chaves
+  Entre os SGBDORs\nomenclature{SGBDORs}{Sistema Gerenciador de Banco de Dados Objeto Relacional}
+  \textit{open-source} mais avançados, totalmente compatível com
+  o padrão ANSI-SQL:2008\nomenclature{ANSI-SQL}{American National Standards Institute - Structured Query Language},
+  com recursos de integridade de dados includindo chaves
   primárias compostas, chave estrangeira, restrições \textit{check, unique, not null},
   gatilhos (\textit{triggers}), visões (\textit{views}), \textit{storage procedures}
   e recursos avançados como colunas de auto-incremento por exemplo.
@@ -100,12 +104,13 @@ qualidade reconhecida como será descrito a seguir.
   A escolha pela tecnologia Python como linguagem de programação se deu principalmente
   porque um dos principais \textit{frameworks} para o desenvolvimento web \textit{Django} \cite{Django2016},
   é escrito em Python. O \textit{Django} conta com mapeador objeto-relacional,
-  interface de administração automática, URL's elegantes, sistema de templates e
+  interface de administração automática, URL's\nomenclature{URL}{Uniform Resource Identifier} elegantes, sistema de templates e
   sistema de cache \cite{Django2016}.
 
   \item[Ionic] é um \textit{framework open-source} para o desenvolvimento de aplicativos
-  híbridos utilizando tecnologias web como HTML, CSS e JavaScript otimizadas
-  para dispositivos móveis, com código fonte sobre a licença MIT \cite{ionic2016}.
+  híbridos utilizando tecnologias web como HTML\nomenclature{HTML}{HyperText Markup Language},
+  CSS\nomenclature{CSS}{Cascading Style Sheets} e JavaScript otimizadas
+  para dispositivos móveis, com código fonte sobre a licença MIT\nomenclature{MIT}{Massachusetts Institute of Technology} \cite{ionic2016}.
   Uma das principais vantagens do desenvolvimento de aplicativos híbridos é que com
   apenas um código base é possível criar aplicativos para várias plataformas como
   iOS, Android e Windows Phone, que aliás foi uma das razões que fez o Moodle
@@ -113,7 +118,7 @@ qualidade reconhecida como será descrito a seguir.
 
   \item[WebSocket] é um protocolo que possibilita abrir um canal interativo de comunicação
   entre o navegador e o servidor. Na verdade, esse canal é bidirecional (\textit{full-duplex})
-  que utiliza apenas um soquete TCP \cite{websocket2016}. A tecnologia \textit{WebSocket} será usada
+  que utiliza apenas um soquete TCP\nomenclature{TCP}{Transmission Control Protocol} \cite{websocket2016}. A tecnologia \textit{WebSocket} será usada
   para permitir votação e controle de frequência em tempo-real.
 \end{description}
 
@@ -121,17 +126,21 @@ qualidade reconhecida como será descrito a seguir.
 
 \begin{table}[!hb]
   \centering
-  \caption{Cronograma de atividades para o TCC II}
-  \begin{tabular}{l||ccccc}
+  % \caption{Cronograma de atividades para o TCC II}
+  \begin{tabular}{|l|c|c|c|c|c|}
   \hline
   Atividade & Set/16 & Out/16 & Nov/16 & Dez/16 & Jan/17\tabularnewline
   \hline
-  \hline
   Correções da Banca & x &  &  &  & \tabularnewline
+  \hline
   Revisão Literatura & x & x & x & x & \tabularnewline
+  \hline
   Implementação & x & x & x & x & \tabularnewline
+  \hline
   Conclusões &  &  &  & x & x\tabularnewline
+  \hline
   Entrega/Defesa TCC II &  &  &  &  & x\tabularnewline
+  \hline
   Correções TCC II &  &  &  &  & x\tabularnewline
   \hline
   \end{tabular}
