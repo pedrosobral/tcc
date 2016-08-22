@@ -17,6 +17,9 @@ git-latexdiff
 # nomencl package
 *.nls
 
+#Lyx
+*.lyx~
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
