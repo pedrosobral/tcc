@@ -10,7 +10,7 @@ watch:
 
 # usage: make diff OLD=HEAD~1 NEW=HEAD target
 diff:
-	./git-latexdiff --bibtex --ignore-latex-errors --latexmk $(OLD) $(NEW) --main $(MAIN).tex  --exclude-textcmd="chapter,section,subsection"
+	./git-latexdiff --bibtex --ignore-latex-errors --latexmk $(OLD) $(NEW) --main $(MAIN).tex  --exclude-textcmd="chapter,section,subsection,subsubsection"
 	#--type FONTSTRIKE
 
 clean:
