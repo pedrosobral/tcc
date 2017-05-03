@@ -41,3 +41,133 @@ tendo como resultado um sistema executável. Depois, o software deve ser verific
 para mostrar que atende às demandas dos usuários (validação do software). Finalmente,
 na fase de evolução de software, o mesmo é modificado devido às mudanças
 de requisitos e às necessidades dos usuários.
+
+\subsection{Elicitação de requisitos}
+
+\subsection{Análise de competidores}
+
+A análise de competidores é uma técnica oriunda engenharia da usabilidade
+que consiste em avaliar produtos concorrentes em busca de pontos positivos e
+negativos. Tal técnica é útil no levantamento de requisitos de um novo sistema,
+identificação de pontos fortes e fracos os produtos, reutilização de design, dentre outros.
+
+Avaliar produtos concorrentes é valioso, porque oferece a oportunidade de novos
+produtos evitarem problemas existentes dos competidores, explorar os pontos
+fracos, além da reutilização dos pontos positivos.
+
+A análise de competidores foi utilizada neste trabalho para elicitar requisitos e boas práticas
+de design de interfaces. % bem como evitar problemos já identificados pelos concorrentes
+Os resultados obtidos foram utilizados no processo de definição do
+protótipo de alta fidelidade.
+
+\subsubsection{Socrative}
+
+Socrative é um sistema de resposta específico para usar em salas de aula. O sistema pode ser
+acessado pelo site ou nos aplicativos para iOS e Android. No socrative, apenas o professor
+precisa fazer um cadastro no site (questões demográficas são solicitadas). Existe uma versão
+gratuita e paga do aplicativo.
+
+Na conta do professor, é possível criar questionários de múltipla escolha, verdadeira e falso e
+de questões abertas. Quando o professor cria uma conta, é gerado um código de identificação
+para que os alunos possam entrar na sala virtual. Na interface do estudante, é necessário
+colocar o código de identificação do professor.
+
+\subsubsection{PollEverywhere}
+
+O PollEverywhere é um sistema de resposta mais genérico, possibilitando fazer votações em
+shows e apresentações diversas. Possibilita integração com ferramentas de apresentação
+como o PowerPoint. Outra característica é a possibilidade dos usuários votarem por SMS.
+Além dos tipos de questões básicas, o PollEverywhere permite criar nuvem de palavras e
+questões com imagens clicáveis.
+
+A conta do usuário é associado com uma URL, em que é usada para os participantes
+da votação entrarem e votarem.
+
+\subsubsection{TopHat}
+
+TopHat é outra solução voltada para a educação, contando com seis tipos de questões.
+Adicionalmente o TopHat permite ao professor fazer a chamada dos estudantes, isso porque
+o professor pode gerar um código aleatório no TopHat para que os estudantes presentes
+possam enviar o código e marcar presença. O produto também disponibiliza uma sala
+de discussão e a possibilidade de criar slides dentro do aplicativo.
+
+\begin{center}
+\begin{table}
+\begin{centering}
+\begin{tabular}{>{\centering}m{4cm}||>{\centering}p{4cm}>{\centering}p{3.5cm}c}
+\hline
+\multicolumn{1}{>{\centering}m{3.5cm}}{Caraterística} & PollEverywhere & TopHat & Socrative\tabularnewline
+\hline
+\hline
+Open-Source & Não & Não & Não\tabularnewline
+Integração com LMS & Blackboard & Excel & MasteryConnect\tabularnewline
+Formatos & JSON, RSS, CSV & Não & Não\tabularnewline
+Read-only API & Sim & Não & Não\tabularnewline
+Integração com PowerPoint & Possibilita & Não & Não\tabularnewline
+Métodos de votação & SMS, web & SMS, Web & Internet\tabularnewline
+Tempo-real & Sim & Sim & Sim\tabularnewline
+Acesso ao sistema & URL & Código de Acesso & Código de Acesso\tabularnewline
+Tipos de questões & 5 & 7 & 3\tabularnewline
+Mínimo de passos para votação & 2 & 3 & 4\tabularnewline
+Anonimato & Possibilita & Possibilita & Possibilita\tabularnewline
+Contagem regressiva & Possibilita & Possibilita & Não\tabularnewline
+Download CSV & Possibilita & Não & Não\tabularnewline
+Relatórios por estudante & Possibilita & Possibilita & Não\tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+
+\caption{Análise de Competidores}
+\end{table}
+
+\par\end{center}
+
+\subsection{Requisitos gerados a partir da análise de competidores}
+
+A partir das informações coletadas na análise de competidores, foram
+extraídos um conjunto de requisitos iniciais para o sistema. Os requisitos gerados
+pela análise dos competidores foram os seguintes:
+
+\begin{description}
+\item[Integração com sistemas LMS]: O sistema deve permitir integração com
+sistemas LMS (preferencialmente Moodle);
+\item[Todas as plataformas:] é muito importante que o sistema seja capaz
+de funcionar em smartphones, tables e computadores independentemente
+do sistema operacional.
+\item[Questões abertas, verdadeiro/falso e de múltipla-escolha:] O sistema
+deve fornecer pelo menos esses três tipos básico de questões;
+\item[Modo de votação:] O sistema deve permitir votação anonima ou requisitar
+a identificação;
+\item[Customização das questões:] O sistema deve permitir inserção de equações
+matemáticas (\LaTeX), imagens e texto como opção das questões;
+\item[Controle da votação:] Opções básicas como ativar ou desativar a votação
+e limpar uma votação em andamento;
+\item[Controle de frequência:] o sistema gera um código aleatório ou uma
+questão trivial, em que o professor pode solicitar que os estudantes
+respondam, contando como controle de frequência. Os dados devem ser
+facilmente exportados para CSV.
+\item[Tempo-real:] No momento da votação, o professor pode escolher entre
+apresentar o resultado em tempo-real, quando todos votarem, ou quando
+determinado;
+\item[Banco de questões:] As questões elaboradas pelo professor podem ser
+armazenadas em um banco de questões que o sistema deve manter;
+\item[Facilidade do uso e de criação de votação:] O sistema não deve oferecer
+dificuldades de uso e de criação de questões;
+\item[Código de acesso:] O sistema deve gerar um código de acesso único para
+identificar o ambiente do professor, usado para que os alunos respondam.
+\end{description}
+
+
+
+
+
+
+
+
+\subsection{Prototipação}
+
+A prototipação trouxe benefícios ao trabalho na medida em que instrumentalizou várias
+funcionalidades do sistema de avaliação e permitiu também, embora de maneira
+preliminar, verificar alguns aspectos de usabilidade, provocando, por exemplo, alguns
+reposicionamentos dos componentes da tela de modo a torná-los mais evidentes para os
+usuários.
