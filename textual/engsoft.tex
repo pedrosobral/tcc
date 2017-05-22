@@ -1,5 +1,5 @@
 % clearpage
-\section{Engenharia de Software}
+\section{Processos de Software}
 
 Engenharia de Software pode ser definida como:
 \begin{citacao}[english]
@@ -42,7 +42,113 @@ para mostrar que atende às demandas dos usuários (validação do software). Fi
 na fase de evolução de software, o mesmo é modificado devido às mudanças
 de requisitos e às necessidades dos usuários.
 
-\subsection{Elicitação de requisitos}
+Quanto ao modelos de engenharia de software temos os modelos prescritivos e os ágeis.
+Os modelos prescritivos definem um conjunto de atividades explícitas para serem
+desenvolvidos no processo de engenharia de software. O Processo Unificado de desenvolvimento
+tem o maior destaque e reconhencimento dentre os modelos prescritivos.
+
+\subsection{Processo Unificado}
+O Processo Unificado define quatro atividades no processo de desenvolvimento de software.
+As fases são descritas como:
+
+\begin{description}
+  \item [{Concepção:}] Por meio da comunicação com os clientes, um conjunto
+  preliminar de casos de uso UML e da arquitetura do sistema é elaborada.
+  \item [{Elaboração:}] Nessa fase, os casos de uso UML são expandidos e
+  refinados, bem como a definição da arquitetura do sistema. Ao final
+  dessa fase, um conjunto de casos de uso UML descrevem os requisitos
+  dos sistema. Uma descrição da arquitetura do sistema e um plano de
+  desenvolvimento do software também são esperados.
+  \item [{Construção:}] Os casos de uso UML desenvolvidos na fase de elaboração
+  são então desenvolvidos e testados. O software deve estar funcionando
+  e documentado na conclusão dessa fase.
+  \item [{Transição:}] transferência do software aos usuários finais.
+\end{description}
+
+Fluxos de trabalhos ou \emph{workflows} ocorrem durante todas as
+fases no processo de desenvolvimento. São seis \emph{workflows} principais
+e três de apoio:
+\begin{enumerate}
+  \item \emph{Modelagem de negócios}: processos de negócios modelados por
+  casos de uso.
+  \item \emph{Requisitos}: atores são idenficados e casos de uso são desenvolvidos.
+  \item \emph{Análise e projeto: }vários modelos são desenvolvidos como de
+  arquitetura e componentes.
+  \item \emph{Implementação: }componentes são implementados.
+  \item \emph{Teste: }processo iterativo em conjunto com a implementação.
+  \item \emph{Implantação: }software é distribuído aos usuários finais.
+  \item \emph{Gerenciamento de configuração e mudança: }apoio as mudanças
+  do sistema.
+  \item \emph{Gerenciamento de projeto: }apoio de desenvolvimento do sistema.
+  \item \emph{Meio ambiente: }apoio a equipe de desenvolvimento com ferramentas.
+\end{enumerate}
+
+\subsection{Métodos Ágeis}
+
+Contrapondo-se aos modelos prescritivos em que propoem especificar por completo
+os requisitos do sistema e só então projetar, construir e testar o sistema, surgiu
+os métodos ágeis, que têm como filosofia o manifesto ágil. Esse manifesto afirma:
+
+\begin{citacao}
+  Estamos descrobrindo melhores maneiras de desenvolver softwares, fazendo-o e ajudando
+  outros a fazê-lo. Através dessse trabalho, valorizamos mais:\\\\
+  \begin{minipage}{15cm}
+    \begin{itemize}
+      \item Indivíduos e interações do que processos e ferramentas
+      \item Software em funcionamento do que documentação abrangente
+      \item Colaboração do cliente do que negociação de contrato
+      \item Resposta a mudanças do que seguir um plano
+    \end{itemize}
+  \end{minipage}\\\\
+  Ou seja, embora itens à direita sejam importantes, valorizamos mais os que estão à esquerda.
+\end{citacao}
+
+Abordagens ágeis incluem Extreme Programming e o Scrum. Eles propõem diferentes processos
+para que tenha-se um desenvolvimento e entrega incremental do sistema, tendo em comum princípios
+baseados no manifesto ágil.
+
+
+\section{Metodologias e Ferramentas}
+A metodologia escolhida nesse projeto levou em consideração as necessidades de um trabalho de
+conclusão de curso no curto prazo e os recursos limitados. Adicionalmente, a falta de uma documentação
+mínima (como documentação de requisitos, diagramas de classes, atores e componentes do sistema)
+pode ser uma barreira para a entrada de contribuidores para projetos de software livre. Dessa forma,
+uma abordagem baseada em metodologias ágeis para modelagem, documentação codificação.
+
+\subsection{Objetivos específicos}
+
+Para cada objetivo específico deste trabalho, as seguintes técnicas e ferramentas foram utilizadas:
+
+\subsubsection{Realizar levantamento de requisitos sobre os sistemas de resposta em sala de aula}
+
+O processo de elicitação de requisitos do sistema utilizou a análise de competidores que
+consistiu basicamente em buscar em alguns sistemas de resposta existentes, referências positivas e
+negativas para definição do modelo a ser proposto.
+
+\subsubsection{Especificar e implementar uma aplicação para dispositivos móveis, que será utilizado como {\clickers}}
+
+Com os requistos da primeira etapa, tivemos os requisitos inicias para a aplicação móvel.
+A linguagem de programação usada na fase de implementação do aplicativo foi JavaScript, tendo como auxílio o framework Ionic.
+
+O Ionic é um framework de código aberto para o desenvolvimento de aplicativos híbridos e desktop utilizando
+tecnologias web como HTML, CSS e JavaScript otimizados para dispositivos móveis, com código fonte sobre a licença MIT.
+
+\subsubsection{Especificar e implementar uma aplicação web para o professor administrar as questões e gerar relatórios}
+
+Com os requistos da primeira etapa, tivemos os requisitos inicias para a aplicação desktop do professor.
+O Ionic também foi utilizado na aplicação desktop do professor.
+
+\subsubsection{Especificar e implementar um sistema servidor, para receber e
+    enviar dados para os os clientes: dispositivos móveis dos alunos e navegador
+    web do professor}
+
+O sistema servidor foi desenvolvido utilizando tecnologias como Node.js, Express, MongoDB, Socket.io e Feathers.
+Tais tecnlogias foram utilizadas por permitir o fácil desenvolvimento de aplicações
+de tempo real entre o servidor e os seus clientes.
+
+A teoria mais aprofundada sobre os métodos e ferramentas citadas serão descritas nas próximas seções.
+
+\section{Requisitos do Sistema}
 
 \subsection{Análise de competidores}
 
