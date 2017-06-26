@@ -5,7 +5,7 @@ all: pdf
 pdf:
 	latexmk $(MAIN) -pdf -pv
 
-watch:
+w:
 	latexmk $(MAIN) -pdf -pvc
 
 # usage: make diff OLD=HEAD~1 NEW=HEAD target
