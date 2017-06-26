@@ -106,6 +106,8 @@ Abordagens ágeis incluem Extreme Programming e o Scrum. Eles propõem diferente
 para que tenha-se um desenvolvimento e entrega incremental do sistema, tendo em comum princípios
 baseados no manifesto ágil.
 
+\subsubsection{Scrum}
+
 
 \section{Metodologias e Ferramentas}
 A metodologia escolhida nesse projeto levou em consideração as necessidades de um trabalho de
@@ -126,7 +128,7 @@ negativas para definição do modelo a ser proposto.
 
 \subsubsection{Especificar e implementar uma aplicação para dispositivos móveis, que será utilizado como {\clickers}}
 
-Com os requistos da primeira etapa, tivemos os requisitos inicias para a aplicação móvel.
+Com os requisitos da primeira etapa, tivemos os requisitos inicias para a aplicação móvel.
 A linguagem de programação usada na fase de implementação do aplicativo foi JavaScript, tendo como auxílio o framework Ionic.
 
 O Ionic é um framework de código aberto para o desenvolvimento de aplicativos híbridos e desktop utilizando
@@ -141,13 +143,19 @@ O Ionic também foi utilizado na aplicação desktop do professor.
     enviar dados para os os clientes: dispositivos móveis dos alunos e navegador
     web do professor}
 
-O sistema servidor foi desenvolvido utilizando tecnologias como Node.js, Express, MongoDB, Socket.io e Feathers.
+O sistema servidor foi desenvolvido utilizando tecnologias como Node.js, Express, MongoDB, Socket.io e \textit{FeathersJS}.
 Tais tecnlogias foram utilizadas por permitir o fácil desenvolvimento de aplicações
 de tempo real entre o servidor e os seus clientes.
 
 A teoria mais aprofundada sobre os métodos e ferramentas citadas serão descritas nas próximas seções.
 
-\section{Requisitos do Sistema}
+\section{Planejamento}
+
+A fase inicial do projeto foi a de planejamento para a definição dos
+requisitos do sistema. Nessa etapa, utilizamos a análise de competidores
+para elucidar os requisitos que foram descritos em histórias de usuário.
+
+\section{Elicitação de Requisitos}
 
 \subsection{Análise de competidores}
 
@@ -160,7 +168,7 @@ Avaliar produtos concorrentes é valioso, porque oferece a oportunidade de novos
 produtos evitarem problemas existentes dos competidores, explorar os pontos
 fracos, além da reutilização dos pontos positivos.
 
-A análise de competidores foi utilizada neste trabalho para elicitar requisitos e boas práticas
+Nesse sentido, a análise de competidores foi utilizada neste trabalho para elicitar requisitos e boas práticas
 de design de interfaces. % bem como evitar problemos já identificados pelos concorrentes
 Os resultados obtidos foram utilizados no processo de definição do
 protótipo de alta fidelidade.
@@ -230,8 +238,8 @@ Relatórios por estudante & Possibilita & Possibilita & Não\tabularnewline
 \subsection{Requisitos gerados a partir da análise de competidores}
 
 A partir das informações coletadas na análise de competidores, foram
-extraídos um conjunto de requisitos iniciais para o sistema. Os requisitos gerados
-pela análise dos competidores foram os seguintes:
+extraídos um conjunto de requisitos iniciais para o sistema. Os requisitos
+funcionais gerados pela análise dos competidores foram então descritos como histórias de usuário.
 
 \begin{description}
 \item[Integração com sistemas LMS]: O sistema deve permitir integração com
@@ -262,17 +270,182 @@ dificuldades de uso e de criação de questões;
 identificar o ambiente do professor, usado para que os alunos respondam.
 \end{description}
 
+\subsubsection{Histórias de Usuário}
+
+As histórias de usuário (\autoref{fig:backlog}), formaram a lista de tarefas (\textit{Product Backlog}).
+Esse foi um conjunto inicial de tarefas do projeto, ou os requisitos principais no momento em que foi criado. Lembrando que o \textit{Product Backlog} nunca é completo, no scrum ele é um artefato vivo que vai sendo modificado.
+
+\begin{figure}
+  \centering
+
+  \subfloat{
+    \includegraphics[scale=0.65,valign=t]{imagens/backlog1.png}
+  }
+  \subfloat{
+    \includegraphics[scale=0.65,valign=t]{imagens/backlog2.png}
+  }
+  \caption{Requisitos iniciais para o sistema em forma de histórias de usuário}
+  \label{fig:backlog}
+\end{figure}
 
 
+\section{Implementação}
 
+\subsection{Plataforma}
 
+\begin{description}
+  \item[Node.js]
+  \item[MongoDB]
+  \item[Ionic] é um \textit{framework open-source} para o desenvolvimento de aplicativos
+  híbridos utilizando tecnologias web como HTML\nomenclature{HTML}{HyperText Markup Language},
+  CSS\nomenclature{CSS}{Cascading Style Sheets} e JavaScript otimizadas
+  para dispositivos móveis, com código fonte sobre a licença MIT\nomenclature{MIT}{Massachusetts Institute of Technology} \cite{ionic2016}.
+  Uma das principais vantagens do desenvolvimento de aplicativos híbridos é que com
+  apenas um código base é possível criar aplicativos para várias plataformas como
+  iOS, Android e Windows Phone, que aliás foi uma das razões que fez o Moodle
+  usar o Ionic como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
 
+  \item[WebSocket] é um protocolo que possibilita abrir um canal interativo de comunicação
+  entre o navegador e o servidor. Na verdade, esse canal é bidirecional (\textit{full-duplex})
+  que utiliza apenas um soquete TCP\nomenclature{TCP}{Transmission Control Protocol} \cite{websocket2016}. A tecnologia \textit{WebSocket} será usada
+  para permitir votação e controle de frequência em tempo-real.
+\end{description}
 
+\subsection{Arquitetura}
+\subsection{Estrutura do Framework: Ionic}
+\subsection{Estrutura do Framework: \textit{FeathersJS}}
 
-\subsection{Prototipação}
+\textit{FeathersJS} é um framework de código livre de desenvolvimento rápido para aplicações
+web em tempo-real escritas em JavaScript. Disponibiliza uma arquitetura simples mas poderosa
+para a construção de aplicações utilizando padrões de programação orientada a aspectos e serviços.
+Os principais componentes do \textit{FeathersJS} são os \textit{services}, \textit{hooks} e
+\textit{events} que são detalhados nas próximas seções.
 
-A prototipação trouxe benefícios ao trabalho na medida em que instrumentalizou várias
-funcionalidades do sistema de avaliação e permitiu também, embora de maneira
-preliminar, verificar alguns aspectos de usabilidade, provocando, por exemplo, alguns
-reposicionamentos dos componentes da tela de modo a torná-los mais evidentes para os
-usuários.
+\subsubsection{Services}
+
+\textit{Services} ou serviços são a camada principal do \textit{\textit{FeathersJS}}.
+Um serviço é simplesmente uma instância de uma classe JavaScript
+que implementa métodos básicos para criação, consulta, atualização e
+destruição de dados ou operações CRUD (\textit{create, read, update, delete}).
+
+Os serviços no \textit{FeathersJS} expõem uma interface uniforme de acesso, permitindo
+assim fornecer uma única API tanto para chamadas HTTP REST e \textit{websockets}.
+Os verbos HTTP (GET, POST, PUT, PATCH e DELETE) têm a correspondência com
+os métodos de um serviço no \textit{\textit{FeathersJS}} listados na \autoref{fig:service_interface}.
+
+\begin{figure}[h]
+\begin{lstlisting}[language=JavaScript]
+const meuServico = {
+  // GET /path
+  find(params, callback) {},
+  // GET /path/<id>
+  get(id, params, callback) {},
+  // POST /path
+  create(data, params, callback) {},
+  // PUT /path/<id>
+  update(id, data, params, callback) {},
+  // PATCH /path/<id>
+  patch(id, data, params, callback) {},
+  // DELETE /path/<id>
+  remove(id, params, callback) {}
+}
+\end{lstlisting}
+\caption{Interface de um serviço}
+\label{fig:service_interface}
+\end{figure}
+
+\subsubsection{Hooks}
+
+\textit{Hooks} são técnicamente \textit{middleware} ou funções que têm acesso aos
+objetos de solicitação (\texttt{req}) e resposta (\texttt{res}).
+Dessa forma os \textit{hooks} podem fazer mudanças nos objetos de solicitação e resposta.
+O \textit{\textit{FeathersJS}} permite registrar \textit{hooks} antes (\textit{before}), depois
+(\textit{after}) ou em caso de erro (\textit{error}) dos métodos de
+um serviço, como mostrado na \autoref{fig:service_interface}.
+
+Como eles têm acesso ao objetos de uma requisição (\texttt{req} e \texttt{res}), eles são usados
+para política de controle de acesso da aplicação, registro de eventos, enviar
+notificações, adicionar propriedades e muito mais.
+
+Essa abordagem é conhecida como Programação Orientada a Aspectos (POA), que permite
+a separação de propriedades ortogonais (ou que não fazem parte da funcionalidade
+principal) dos componentes funcionais de uma forma natural e concisa.
+
+Na \autoref{fig:hooks_example} três \textit{hooks} foram registrados para um serviço de questões (\textit{questions}) ($\ell.\,1$),
+em que é adicionado a propriedade \texttt{createdAt} antes (\textit{before}) da criação (\textit{create}) de um objeto questão ($\ell.\,3-5$),
+e a propriedade \texttt{updatedAt} quando uma questão é modificada (\textit{update} e \textit{patch}), ($\ell.\,7-13$).
+
+\begin{figure}[h]
+\begin{lstlisting}[language=JavaScript]
+  app.service('questions').hooks({
+    before: {
+        create(hook) {
+          hook.data.createdAt = new Date();
+        },
+
+        update(hook) {
+          hook.data.updatedAt = new Date();
+        },
+
+        patch(hook) {
+          hook.data.updatedAt = new Date();
+        }
+      }
+  });
+\end{lstlisting}
+\caption{Exemplo registro de \textit{hooks} no \textit{\textit{FeathersJS}}}
+\label{fig:hooks_example}
+\end{figure}
+
+\subsubsection{Events}
+
+São os \textit{events} ou eventos no \textit{\textit{FeathersJS}} permitem
+a criação de aplicações de tempo-real usando \textit{WebSockets}.
+
+No \textit{\textit{FeathersJS}}, os serviços enviam automaticamente eventos ou notificações
+\texttt{created, updated, patched, removed} quando algum dos respectivos métodos listados
+na \autoref{fig:service_interface} finalizam com sucesso.
+Os clientes da aplicação podem então ouvir a esses eventos e reagirem de acordo.
+
+Na \autoref{fig:events_example} o cliente obtém uma referência do serviço
+de votação ($\ell.\,2$) e então passa a ouvir quando uma nova votação é criada (\texttt{created}) ($\ell.\,5-7$).
+Nesse caso, os clientes de uma aplicação de votação, por exemplo, poderiam
+receber as questões da votação publicada por outro cliente e então responder.
+
+\begin{figure}[h]
+\begin{lstlisting}[language=JavaScript]
+  // Retrieve the wrapped service object which will be an event emitter
+  const poll = app.service('poll');
+
+  // Listen `created` event
+  poll.on('created', (poll) => {
+    console.log('New poll created', poll);
+  });
+\end{lstlisting}
+\caption{Exemplo eventos no \textit{\textit{FeathersJS}}}
+\label{fig:events_example}
+\end{figure}
+
+\subsubsection{Visão geral}
+
+A \autoref{fig:feathers_request} ilustra como funciona o ciclo de uma requisição
+entre clientes e uma aplicação baseada no \textit{FeathersJS}.
+
+O cliente faz uma requisição para um serviço, que antes de chegar no serviço passa
+pela camada de \textit{before hooks}, o método requisitado pode completar com sucesso indo para a
+\textit{after hooks} e enviando um evento para os clientes conectados. Qualquer erro no processo
+é enviado para a camada \textit{error hooks} que também pode notificar os clientes da aplicação.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.45,valign=t]{imagens/feathers_request.jpeg}
+  \caption{Como o ciclo de uma requisição funciona no \textit{FeathersJS}}
+  \label{fig:feathers_request}
+\end{figure}
+
+A utilização do \textit{FeathersJS} simplificou muito o processo de construção
+do software por disponibilizar facilidades para o programador e implementar
+uma API de tempo-real via serviços de forma nativa. Além disso, a interface dos
+serviços \autoref{fig:service_interface} torna fácil a integração com qualquer banco de dados.
+Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitindo integração
+com uma variedade de banco de dados por meio de uma interface única.
