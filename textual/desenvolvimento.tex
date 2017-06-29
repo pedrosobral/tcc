@@ -9,142 +9,6 @@
 \end{quote}
 
 
-\section{Aprendizado Ativo}\label{section:aprendizado_ativo}
-Em resumo, o aprendizado ativo é um conjunto de práticas pedagógicas
-que além de envolver os estudantes no fazer, os faça pensar no que estão fazendo \cite[p. 19]{Charles1991}.
-
-Os princípios do aprendizado ativo são dois: introduzir atividades nas salas de aula
-tradicionais e promover o envolvimento dos estudantes. O primeiro é a forma
-mais simples do aprendizado ativo. Um exemplo seria fazer pequenas pausas na aula
-e colocar os estudantes para revisar as notas de aula com um colega. No entanto,
-é preciso que tais atividades promovam o engajamento dos estudantes no processo
-de ensino e aprendizagem \cite[p. 3]{Prince2004}.
-
-Em salas de aula que utilizam o aprendizado ativo pode-se ter um aumento de até 6\%
-na média final nas provas dos alunos e que aquelas salas de aula puramente expositivas
-têm 55\% mais chance de reprovarem os alunos do que aquelas com aprendizado ativo.
-Esse aumento que pode parecer pouco (0,3 na média final) colocaria a média daqueles estudantes
-que desistem do curso bem próximo daqueles que permanecem, podendo-se dessa forma aumentar
-a taxa de retenção dos estudantes \cite[p. 4]{Freeman2014}.
-
-O estudo de meta-análise de \citeonline{Freeman2014} envolveu mais de 200 artigos,
-que comparavam as performances dos alunos em salas de aula com pelo menos algum
-elemento de aprendizado ativo com as tradicionais aulas expositivas. Além de
-mostrarem evidências de que o aprendizado ativo pode melhorar o aprendizado dos
-estudantes de graduação, principalmente nas áreas de ciência, tecnologia, engenharia
-e matemática, \citeauthoronline{Freeman2014} propõem aos futuros pesquisadores
-testarem não mais a eficiência dos métodos de aprendizado ativo frente as tradicionais
-aulas expositivas (``primeira geração de pesquisas''), mas sim qual
-o tipo de aprendizado ativo é mais apropriado para cada área do conhecimento
-(``segunda geração de pesquisas'').
-
-
-Apesar dos indícios dos benefícios da Aprendizagem Ativa, no contexto brasileiro,
-tornar o aluno um agente ativo no processo de ensino e aprendizagem não é uma tarefa fácil.
-São muitas as adversidades de infraestrutura e institucionais
-encontradas de modo a propiciar o desenvolvimento dessa metodologia. Seja por salas com
-numero excessivo de alunos, estes desinteressados, professores mal pagos, ou com
-a pressão de produzir cientificamente \cite{Araujo2013}.
-
-Por outro lado, muitas são as iniciativas encontradas na literatura mostrando resultados
-satisfatórios que podem ajudar o professor nesse processo \cite{Crouch2001, Gok2013, Barros2004}.
-Na próxima seção será apresentado o método ativo de ensino \textit{Peer Instruction} ou \textit{Instrução pelos Colegas}
-(IpC)\nomenclature{IpC}{Instrução pelos Colegas}.
-
-\subsection{Instrução pelos Colegas (IpC)}
-\label{section:ipc}
-
-O IpC foi desenvolvido pelo Professor Eriz Mazur da Universidade de Harvard (EUA)\nomenclature{EUA}{Estados Unidos da América} na
-década de 1990. O objetivo do IpC é fazer com que todos os estudantes se engajem em
-discussões com o vizinho de opinião diferente sobre um determinado conceito e fazer com que cada
-estudante tente explicar o conceito um para o outro \cite{Mazur2009}.
-
-No método IpC, geralmente, o professor começa fazendo uma breve exposição dialogada do conteúdo (15min).
-Depois é colocado para os estudantes uma questão conceitual, que é
-desenvolvida de modo a avaliar o entendimento dos estudantes sobre um tópico.
-A \autoref{fig:desen_fluxograma_ipc} resume o processo de implementação do método IpC na sala de aula.
-
-\begin{figure}[b]
-  \centering
-  \caption{Diagrama do processo de implementação do método IpC}
-  \includegraphics[clip, trim=0cm 18cm 3cm .4cm, width=.85\textwidth]{imagens/peer_instruction}
-  \label{fig:desen_fluxograma_ipc}
-  \fonte{Adaptado de \cite{Araujo2013}}
-\end{figure}
-
-Um exemplo de uma questão conceitual de introdução a física é mostrada na \autoref{fig:desenv_ct}. Os
-estudantes respondem individualmente  a questão (1-2min), geralmente, utilizando
-\textit{clickers}, que são pequenos dispositivos transmissores como os da \autoref{fig:desenv_clickers}.
-Em seguida, dependendo do percentual de alunos que acertem a questão,
-o professor pode revisar o assunto (acerto < 30\%), fazer uma breve explanação da
-questão e ir para um próximo tópico ou nova questão (acerto > 70\%), ou o que se
-deseja do método, um percentual de acerto entre 30\% e 70\% em que, nessa situação, o
-professor estimula que os alunos encontrem um parceiro que respondeu de forma diferente
-e que tentem explicar um para o outro o porquê de estar correto. Com esse processo, os alunos se auto
-instruem, o que justifica o nome do método ``Instrução pelos Colegas'' \cite{Mazur2009, Crouch2001}.
-
-
-\begin{figure}[t]
-  \centering
-  \caption{Exemplo de uma questão conceitual}
-  \begin{tikzpicture}[scale=1]
-    \label{fig:desenv_ct}
-    \node[,text width=11cm] at (0,4) {\textsf{Considere uma placa de metal retangular com um furo circular no centro. Se a
-    placa for uniformemente aquecida, o diâmetro do buraco:}};
-    \node[,text width=5cm] at (-3.5,2) {
-      \begin{enumerate}
-        \item \textsf{aumenta};
-        \item \textsf{permanece o mesmo};
-        \item \textsf{diminui};
-      \end{enumerate}
-    };
-    \draw[fill=gray!30, shift={(1.5cm,.5cm)}](0,0) rectangle (4,3);
-    \draw[fill=white, shift={(1.5cm,.5cm)}](2,1.5) circle(20pt);
-  \end{tikzpicture}
-  \fonte{Adaptado de \cite{Watkins2013}}
-\end{figure}
-
-Uma das etapas do IpC na sala de aula é a votação, em que os estudantes indicam
-as suas respostas. Existem pelo menos quatro maneiras \cite{Crouch2007} do professor
-obter um \textit{feedback} da votação dos estudantes:
-
-\begin{description}
-  \item[Levantar as mãos:] a forma mais simples é pedir para os alunos levantarem as mãos para cada alternativa,
-  mas, dentre as várias limitações desse método, os estudantes podem se influenciar pela resposta dos outros.
-  \item[Cartões coloridos:] uma segunda alternativa seria o uso de
-  cartões coloridos (\textit{flashcards}) que dificultaria os alunos ver a resposta
-  dos outros e facilitaria a contagem pelo professor, porém uma limitação desse método,
-  assim como o anterior é a dificuldade de alguma forma guardar os resultados.
-  \item[Folha de respostas:] outra alternativa, no entanto não seria possível ter
-  um resultado imediato das respostas.
-  \item[Sistemas de resposta em sala de aula:] exemplo os \textit{clickers} da \autoref{fig:desenv_clickers}, ou \textit{smartphones},
-  e sistemas web possibilitam aos estudantes enviarem imediatamente as respostas ao
-  computador do professor, de forma anônima aos colegas de sala e visualizar graficamente
-  os resultados.
-\end{description}
-
-
-\begin{figure}
-  \begin{centering}
-    \caption{\label{fig:desenv_clickers}Exemplo de \textit{clickers}}
-    \subfloat[\textit{i>clicker 2}]{\includegraphics[scale=0.25]{imagens/desenv_iclicker}\label{fig:clickersA}}
-    \hspace{.5cm}
-    \subfloat[\textit{ResponseCard RF LCD}]{\includegraphics[scale=.4517]{imagens/desenv_turning_clicker}}
-    \par
-  \end{centering}
-  \fonte{(a) \href{http://www1.iclicker.com}{iclicker.com} (b) \href{http://www.turningtechnologies.com}{turningtechnologies.com}}
-\end{figure}
-
-% No entanto, a implementação do IpC não ocorre apenas na sala de aula. Espera-se
-% que os alunos façam leituras e atividades antes da aula. Também espera-se do
-% professor guiar os estudantes nessa etapa, seja indicando ou disponibilizando o
-% material adequado. O tempo em sala de aula que seria utilizado para apenas transferir
-% informações para os estudante é utilizado principalmente para discussões, interação
-% entre os estudantes, tempo para assimilação e para pensar \cite{Mazur2009, Crouch2001}.
-
-
-
-
 \section{Sistemas de Resposta em Sala de Aula}
 \label{section:sistemas_de_resposta}
 
@@ -376,17 +240,159 @@ a passividade em sala de aula \cite{Terrion2012, Kay2009}. Além disso, quando
 usados apenas para controle de frequência, os estudantes podem ter uma percepção
 negativa da tecnologia \cite{Terrion2012, Caldwell2007}.
 
-\subsection{Considerações finais}
-Por outro lado, apesar das seções anteriores serem animadoras quanto ao uso dos
+% \subsection{Considerações finais}
+% Por outro lado, apesar das seções anteriores serem animadoras quanto ao uso dos
+% {\clickers} é importante destacar a tecnologia apenas como um meio para
+% colaborar no processo de ensino e aprendizagem, e só faz sentido quando associada
+% com práticas pedagógicas de ensino como o aprendizado ativo
+% (vide \autoref{section:aprendizado_ativo}) \cite{Terrion2012, Moran2006}. O leitor interessado
+% sobre o uso das novas tecnologias em sala de aula, poderá buscar nas obras
+% indicadas em \cite{portalBrasil2014}.
+%
+% \citeonline{Han2014} concluiu que o ensino e aprendizado com o auxílio de {\clickers}
+% ainda é um fenômeno complexo e relacional. Segundo o mesmo autor, estudos mais rigorosos
+% devem ser conduzidos para se entender por exemplo a relação entre o uso de {\clickers}
+% e o aprendizado, pois o benefícios da tecnologia podem variar pelo histórico do
+% estudante, motivação e metacognição.
+
+
+\section{Aprendizado Ativo}\label{section:aprendizado_ativo}
+
+Apesar das seções anteriores serem animadoras quanto ao uso dos
 {\clickers} é importante destacar a tecnologia apenas como um meio para
 colaborar no processo de ensino e aprendizagem, e só faz sentido quando associada
-com práticas pedagógicas de ensino como o aprendizado ativo
-(vide \autoref{section:aprendizado_ativo}) \cite{Terrion2012, Moran2006}. O leitor interessado
-sobre o uso das novas tecnologias em sala de aula, poderá buscar nas obras
+com práticas pedagógicas de ensino como o aprendizado ativo \cite{Terrion2012, Moran2006}.
+O leitor interessado sobre o uso das novas tecnologias em sala de aula, poderá buscar nas obras
 indicadas em \cite{portalBrasil2014}.
 
-\citeonline{Han2014} concluiu que o ensino e aprendizado com o auxílio de {\clickers}
-ainda é um fenômeno complexo e relacional. Segundo o mesmo autor, estudos mais rigorosos
-devem ser conduzidos para se entender por exemplo a relação entre o uso de {\clickers}
-e o aprendizado, pois o benefícios da tecnologia podem variar pelo histórico do
-estudante, motivação e metacognição.
+Em resumo, o aprendizado ativo é um conjunto de práticas pedagógicas
+que além de envolver os estudantes no fazer, os faça pensar no que estão fazendo \cite[p. 19]{Charles1991}.
+
+Os princípios do aprendizado ativo são dois: introduzir atividades nas salas de aula
+tradicionais e promover o envolvimento dos estudantes. O primeiro é a forma
+mais simples do aprendizado ativo. Um exemplo seria fazer pequenas pausas na aula
+e colocar os estudantes para revisar as notas de aula com um colega. No entanto,
+é preciso que tais atividades promovam o engajamento dos estudantes no processo
+de ensino e aprendizagem \cite[p. 3]{Prince2004}.
+
+Em salas de aula que utilizam o aprendizado ativo pode-se ter um aumento de até 6\%
+na média final nas provas dos alunos e que aquelas salas de aula puramente expositivas
+têm 55\% mais chance de reprovarem os alunos do que aquelas com aprendizado ativo.
+Esse aumento que pode parecer pouco (0,3 na média final) colocaria a média daqueles estudantes
+que desistem do curso bem próximo daqueles que permanecem, podendo-se dessa forma aumentar
+a taxa de retenção dos estudantes \cite[p. 4]{Freeman2014}.
+
+O estudo de meta-análise de \citeonline{Freeman2014} envolveu mais de 200 artigos,
+que comparavam as performances dos alunos em salas de aula com pelo menos algum
+elemento de aprendizado ativo com as tradicionais aulas expositivas. Além de
+mostrarem evidências de que o aprendizado ativo pode melhorar o aprendizado dos
+estudantes de graduação, principalmente nas áreas de ciência, tecnologia, engenharia
+e matemática, \citeauthoronline{Freeman2014} propõem aos futuros pesquisadores
+testarem não mais a eficiência dos métodos de aprendizado ativo frente as tradicionais
+aulas expositivas (``primeira geração de pesquisas''), mas sim qual
+o tipo de aprendizado ativo é mais apropriado para cada área do conhecimento
+(``segunda geração de pesquisas'').
+
+
+Apesar dos indícios dos benefícios da Aprendizagem Ativa, no contexto brasileiro,
+tornar o aluno um agente ativo no processo de ensino e aprendizagem não é uma tarefa fácil.
+São muitas as adversidades de infraestrutura e institucionais
+encontradas de modo a propiciar o desenvolvimento dessa metodologia. Seja por salas com
+numero excessivo de alunos, estes desinteressados, professores mal pagos, ou com
+a pressão de produzir cientificamente \cite{Araujo2013}.
+
+Por outro lado, muitas são as iniciativas encontradas na literatura mostrando resultados
+satisfatórios que podem ajudar o professor nesse processo \cite{Crouch2001, Gok2013, Barros2004}.
+Na próxima seção será apresentado o método ativo de ensino \textit{Peer Instruction} ou \textit{Instrução pelos Colegas}
+(IpC)\nomenclature{IpC}{Instrução pelos Colegas}.
+
+\subsection{Instrução pelos Colegas (IpC)}
+\label{section:ipc}
+
+O IpC foi desenvolvido pelo Professor Eriz Mazur da Universidade de Harvard (EUA)\nomenclature{EUA}{Estados Unidos da América} na
+década de 1990. O objetivo do IpC é fazer com que todos os estudantes se engajem em
+discussões com o vizinho de opinião diferente sobre um determinado conceito e fazer com que cada
+estudante tente explicar o conceito um para o outro \cite{Mazur2009}.
+
+No método IpC, geralmente, o professor começa fazendo uma breve exposição dialogada do conteúdo (15min).
+Depois é colocado para os estudantes uma questão conceitual, que é
+desenvolvida de modo a avaliar o entendimento dos estudantes sobre um tópico.
+A \autoref{fig:desen_fluxograma_ipc} resume o processo de implementação do método IpC na sala de aula.
+
+\begin{figure}[b]
+  \centering
+  \caption{Diagrama do processo de implementação do método IpC}
+  \includegraphics[clip, trim=0cm 18cm 3cm .4cm, width=.85\textwidth]{imagens/peer_instruction}
+  \label{fig:desen_fluxograma_ipc}
+  \fonte{Adaptado de \cite{Araujo2013}}
+\end{figure}
+
+Um exemplo de uma questão conceitual de introdução a física é mostrada na \autoref{fig:desenv_ct}. Os
+estudantes respondem individualmente  a questão (1-2min), geralmente, utilizando
+\textit{clickers}, que são pequenos dispositivos transmissores como os da \autoref{fig:desenv_clickers}.
+Em seguida, dependendo do percentual de alunos que acertem a questão,
+o professor pode revisar o assunto (acerto < 30\%), fazer uma breve explanação da
+questão e ir para um próximo tópico ou nova questão (acerto > 70\%), ou o que se
+deseja do método, um percentual de acerto entre 30\% e 70\% em que, nessa situação, o
+professor estimula que os alunos encontrem um parceiro que respondeu de forma diferente
+e que tentem explicar um para o outro o porquê de estar correto. Com esse processo, os alunos se auto
+instruem, o que justifica o nome do método ``Instrução pelos Colegas'' \cite{Mazur2009, Crouch2001}.
+
+
+\begin{figure}[t]
+  \centering
+  \caption{Exemplo de uma questão conceitual}
+  \begin{tikzpicture}[scale=1]
+    \label{fig:desenv_ct}
+    \node[,text width=11cm] at (0,4) {\textsf{Considere uma placa de metal retangular com um furo circular no centro. Se a
+    placa for uniformemente aquecida, o diâmetro do buraco:}};
+    \node[,text width=5cm] at (-3.5,2) {
+      \begin{enumerate}
+        \item \textsf{aumenta};
+        \item \textsf{permanece o mesmo};
+        \item \textsf{diminui};
+      \end{enumerate}
+    };
+    \draw[fill=gray!30, shift={(1.5cm,.5cm)}](0,0) rectangle (4,3);
+    \draw[fill=white, shift={(1.5cm,.5cm)}](2,1.5) circle(20pt);
+  \end{tikzpicture}
+  \fonte{Adaptado de \cite{Watkins2013}}
+\end{figure}
+
+Uma das etapas do IpC na sala de aula é a votação, em que os estudantes indicam
+as suas respostas. Existem pelo menos quatro maneiras \cite{Crouch2007} do professor
+obter um \textit{feedback} da votação dos estudantes:
+
+\begin{description}
+  \item[Levantar as mãos:] a forma mais simples é pedir para os alunos levantarem as mãos para cada alternativa,
+  mas, dentre as várias limitações desse método, os estudantes podem se influenciar pela resposta dos outros.
+  \item[Cartões coloridos:] uma segunda alternativa seria o uso de
+  cartões coloridos (\textit{flashcards}) que dificultaria os alunos ver a resposta
+  dos outros e facilitaria a contagem pelo professor, porém uma limitação desse método,
+  assim como o anterior é a dificuldade de alguma forma guardar os resultados.
+  \item[Folha de respostas:] outra alternativa, no entanto não seria possível ter
+  um resultado imediato das respostas.
+  \item[Sistemas de resposta em sala de aula:] exemplo os \textit{clickers} da \autoref{fig:desenv_clickers}, ou \textit{smartphones},
+  e sistemas web possibilitam aos estudantes enviarem imediatamente as respostas ao
+  computador do professor, de forma anônima aos colegas de sala e visualizar graficamente
+  os resultados.
+\end{description}
+
+
+\begin{figure}
+  \begin{centering}
+    \caption{\label{fig:desenv_clickers}Exemplo de \textit{clickers}}
+    \subfloat[\textit{i>clicker 2}]{\includegraphics[scale=0.25]{imagens/desenv_iclicker}\label{fig:clickersA}}
+    \hspace{.5cm}
+    \subfloat[\textit{ResponseCard RF LCD}]{\includegraphics[scale=.4517]{imagens/desenv_turning_clicker}}
+    \par
+  \end{centering}
+  \fonte{(a) \href{http://www1.iclicker.com}{iclicker.com} (b) \href{http://www.turningtechnologies.com}{turningtechnologies.com}}
+\end{figure}
+
+% No entanto, a implementação do IpC não ocorre apenas na sala de aula. Espera-se
+% que os alunos façam leituras e atividades antes da aula. Também espera-se do
+% professor guiar os estudantes nessa etapa, seja indicando ou disponibilizando o
+% material adequado. O tempo em sala de aula que seria utilizado para apenas transferir
+% informações para os estudante é utilizado principalmente para discussões, interação
+% entre os estudantes, tempo para assimilação e para pensar \cite{Mazur2009, Crouch2001}.
