@@ -102,7 +102,7 @@ os métodos ágeis, que têm como filosofia o manifesto ágil. Esse manifesto af
   Ou seja, embora itens à direita sejam importantes, valorizamos mais os que estão à esquerda.
 \end{citacao}
 
-Abordagens ágeis incluem Extreme Programming e o Scrum. Eles propõem diferentes processos
+Abordagens ágeis incluem \textit{Extreme Programming} e o \textit{Scrum}. Eles propõem diferentes processos
 para que tenha-se um desenvolvimento e entrega incremental do sistema, tendo em comum princípios
 baseados no manifesto ágil.
 
@@ -111,10 +111,8 @@ baseados no manifesto ágil.
 
 \section{Metodologias e Ferramentas}
 A metodologia escolhida nesse projeto levou em consideração as necessidades de um trabalho de
-conclusão de curso no curto prazo e os recursos limitados. Adicionalmente, a falta de uma documentação
-mínima (como documentação de requisitos, diagramas de classes, atores e componentes do sistema)
-pode ser uma barreira para a entrada de contribuidores para projetos de software livre. Dessa forma,
-uma abordagem baseada em metodologias ágeis para modelagem, documentação codificação.
+conclusão de curso no curto prazo e os recursos limitados. Dessa forma, uma abordagem baseada
+em metodologias ágeis foi utilizada para modelagem, documentação e codificação do software.
 
 \subsection{Objetivos específicos}
 
@@ -129,23 +127,22 @@ negativas para definição do modelo a ser proposto.
 \subsubsection{Especificar e implementar uma aplicação para dispositivos móveis, que será utilizado como {\clickers}}
 
 Com os requisitos da primeira etapa, tivemos os requisitos inicias para a aplicação móvel.
-A linguagem de programação usada na fase de implementação do aplicativo foi JavaScript, tendo como auxílio o framework Ionic.
+A linguagem de programação usada na fase de implementação do aplicativo foi JavaScript, tendo como auxílio o \textit{framework} \textit{Ionic}.
 
-O Ionic é um framework de código aberto para o desenvolvimento de aplicativos híbridos e desktop utilizando
+O \textit{Ionic} é um \textit{framework} de código aberto para o desenvolvimento de aplicativos híbridos e desktop utilizando
 tecnologias web como HTML, CSS e JavaScript otimizados para dispositivos móveis, com código fonte sobre a licença MIT.
 
 \subsubsection{Especificar e implementar uma aplicação web para o professor administrar as questões e gerar relatórios}
 
 Com os requistos da primeira etapa, tivemos os requisitos inicias para a aplicação desktop do professor.
-O Ionic também foi utilizado na aplicação desktop do professor.
+O \textit{Ionic} também foi utilizado na aplicação desktop do professor.
 
 \subsubsection{Especificar e implementar um sistema servidor, para receber e
     enviar dados para os os clientes: dispositivos móveis dos alunos e navegador
     web do professor}
 
-O sistema servidor foi desenvolvido utilizando tecnologias como Node.js, Express, MongoDB, Socket.io e \textit{FeathersJS}.
-Tais tecnlogias foram utilizadas por permitir o fácil desenvolvimento de aplicações
-de tempo real entre o servidor e os seus clientes.
+O sistema servidor foi desenvolvido utilizando tecnologias como \textit{Node.js}, \textit{MongoDB}, e o \textit{framework} \textit{FeathersJS}.
+Tais tecnologias foram utilizadas por permitir o fácil desenvolvimento de aplicações web de tempo real entre o servidor e os seus clientes.
 
 A teoria mais aprofundada sobre os métodos e ferramentas citadas serão descritas nas próximas seções.
 
@@ -170,13 +167,12 @@ fracos, além da reutilização dos pontos positivos.
 
 Nesse sentido, a análise de competidores foi utilizada neste trabalho para elicitar requisitos e boas práticas
 de design de interfaces. % bem como evitar problemos já identificados pelos concorrentes
-Os resultados obtidos foram utilizados no processo de definição do
-protótipo de alta fidelidade.
+Os resultados obtidos foram utilizados no processo de desenvolvimento do software.
 
-\subsubsection{Socrative}
+\subsubsection{\textit{Socrative}}
 
-Socrative é um sistema de resposta específico para usar em salas de aula. O sistema pode ser
-acessado pelo site ou nos aplicativos para iOS e Android. No socrative, apenas o professor
+\textit{Socrative} é um sistema de resposta específico para usar em salas de aula. O sistema pode ser
+acessado pelo site ou nos aplicativos para \textit{iOS} e \textit{Android}. No \textit{Socrative}, apenas o professor
 precisa fazer um cadastro no site (questões demográficas são solicitadas). Existe uma versão
 gratuita e paga do aplicativo.
 
@@ -185,22 +181,22 @@ de questões abertas. Quando o professor cria uma conta, é gerado um código de
 para que os alunos possam entrar na sala virtual. Na interface do estudante, é necessário
 colocar o código de identificação do professor.
 
-\subsubsection{PollEverywhere}
+\subsubsection{\textit{PollEverywhere}}
 
-O PollEverywhere é um sistema de resposta mais genérico, possibilitando fazer votações em
+O \textit{PollEverywhere} é um sistema de resposta mais genérico, possibilitando fazer votações em
 shows e apresentações diversas. Possibilita integração com ferramentas de apresentação
-como o PowerPoint. Outra característica é a possibilidade dos usuários votarem por SMS.
-Além dos tipos de questões básicas, o PollEverywhere permite criar nuvem de palavras e
+como o \textit{PowerPoint}. Outra característica é a possibilidade dos usuários votarem por SMS.
+Além dos tipos de questões básicas, o \textit{PollEverywhere} permite criar nuvem de palavras e
 questões com imagens clicáveis.
 
 A conta do usuário é associado com uma URL, em que é usada para os participantes
 da votação entrarem e votarem.
 
-\subsubsection{TopHat}
+\subsubsection{\textit{TopHat}}
 
-TopHat é outra solução voltada para a educação, contando com seis tipos de questões.
-Adicionalmente o TopHat permite ao professor fazer a chamada dos estudantes, isso porque
-o professor pode gerar um código aleatório no TopHat para que os estudantes presentes
+\textit{TopHat} é outra solução voltada para a educação, contando com seis tipos de questões.
+Adicionalmente o \textit{TopHat} permite ao professor fazer a chamada dos estudantes, isso porque
+o professor pode gerar um código aleatório no \textit{TopHat} para que os estudantes presentes
 possam enviar o código e marcar presença. O produto também disponibiliza uma sala
 de discussão e a possibilidade de criar slides dentro do aplicativo.
 
@@ -209,7 +205,7 @@ de discussão e a possibilidade de criar slides dentro do aplicativo.
 \begin{centering}
 \begin{tabular}{>{\centering}m{4cm}||>{\centering}p{4cm}>{\centering}p{3.5cm}c}
 \hline
-\multicolumn{1}{>{\centering}m{3.5cm}}{Caraterística} & PollEverywhere & TopHat & Socrative\tabularnewline
+\multicolumn{1}{>{\centering}m{3.5cm}}{Caraterística} & \textit{PollEverywhere} & \textit{TopHat} & \textit{Socrative}\tabularnewline
 \hline
 \hline
 Open-Source & Não & Não & Não\tabularnewline
@@ -273,7 +269,8 @@ identificar o ambiente do professor, usado para que os alunos respondam.
 \subsubsection{Histórias de Usuário}
 
 As histórias de usuário (\autoref{fig:backlog}), formaram a lista de tarefas (\textit{Product Backlog}).
-Esse foi um conjunto inicial de tarefas do projeto, ou os requisitos principais no momento em que foi criado. Lembrando que o \textit{Product Backlog} nunca é completo, no scrum ele é um artefato vivo que vai sendo modificado.
+Esse foi um conjunto inicial de tarefas do projeto, ou os requisitos principais no momento em que foi criado.
+Lembrando que o \textit{Product Backlog} nunca é completo, no scrum ele é um artefato vivo que vai sendo modificado.
 
 \begin{figure}
   \centering
@@ -296,14 +293,14 @@ Esse foi um conjunto inicial de tarefas do projeto, ou os requisitos principais 
 % \begin{description}
 %   \item[Node.js]
 %   \item[MongoDB]
-%   \item[Ionic] é um \textit{framework open-source} para o desenvolvimento de aplicativos
+%   \item[\textit{Ionic}] é um \textit{framework open-source} para o desenvolvimento de aplicativos
 %   híbridos utilizando tecnologias web como HTML\nomenclature{HTML}{HyperText Markup Language},
 %   CSS\nomenclature{CSS}{Cascading Style Sheets} e JavaScript otimizadas
 %   para dispositivos móveis, com código fonte sobre a licença MIT\nomenclature{MIT}{Massachusetts Institute of Technology} \cite{ionic2016}.
 %   Uma das principais vantagens do desenvolvimento de aplicativos híbridos é que com
 %   apenas um código base é possível criar aplicativos para várias plataformas como
-%   iOS, Android e Windows Phone, que aliás foi uma das razões que fez o Moodle
-%   usar o Ionic como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
+%   \textit{iOS}, \textit{Android} e \textit{Windows}, que aliás foi uma das razões que fez o Moodle
+%   usar o \textit{Ionic} como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
 %
 %   \item[WebSocket] é um protocolo que possibilita abrir um canal interativo de comunicação
 %   entre o navegador e o servidor. Na verdade, esse canal é bidirecional (\textit{full-duplex})
@@ -312,29 +309,29 @@ Esse foi um conjunto inicial de tarefas do projeto, ou os requisitos principais 
 % \end{description}
 
 \subsection{Arquitetura}
-\subsection{Estrutura do Framework: Ionic}
+\subsection{Estrutura do Framework: \textit{Ionic}}
 
-Ionic é um \textit{framework open-source} para o desenvolvimento de aplicativos
+\textit{Ionic} é um \textit{framework open-source} para o desenvolvimento de aplicativos
 híbridos utilizando tecnologias web como HTML\nomenclature{HTML}{HyperText Markup Language},
 CSS\nomenclature{CSS}{Cascading Style Sheets} e JavaScript otimizadas
 para dispositivos móveis, com código fonte sobre a licença MIT\nomenclature{MIT}{Massachusetts Institute of Technology} \cite{ionic2016}.
 Uma das principais vantagens do desenvolvimento de aplicativos híbridos é que com
 apenas um código base é possível criar aplicativos para várias plataformas como
-iOS, Android e Windows Phone, Desktop, que aliás foi uma das razões que fez o Moodle
-usar o Ionic como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
+\textit{iOS}, \textit{Android} e \textit{Windows} Phone, Desktop, que aliás foi uma das razões que fez o Moodle
+usar o \textit{Ionic} como \textit{framework} para o desenvolvimento do \textit{Moodle Mobile 2} \cite{moodle2016}.
 
 \subsubsection{Pages}
 
-Um aplicativo desenvolvido no Ionic é composto por um conjunto de pages ou páginas.
+Um aplicativo desenvolvido no \textit{Ionic} é composto por um conjunto de pages ou páginas.
 Cada página é composta por alguns arquivos. Um arquivo é responsável pelo
 elemento visual da página, desenvolvido em HTML. Existe o arquivo de estilos da página,
 desenvolvido em SCSS. O arquivo principal é o responsável por controlar a página, desenvolvido
 em TypeScript.
 
 As Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html} são um exemplo básico de
-uma página de um aplicativo desenvolvido em Ionic. O resultado dessa página é mostrado
+uma página de um aplicativo desenvolvido em \textit{Ionic}. O resultado dessa página é mostrado
 na \autoref{fig:hello_world_ionic}. Observe que com apenas um código base, os elementos
-visuais da página são diferentes dependendo da plataforma (iOS, Android e Windowns).
+visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \textit{Android} e \textit{Windows}).
 
 \begin{figure}[h]
 \begin{lstlisting}[language=JavaScript]
@@ -386,21 +383,21 @@ visuais da página são diferentes dependendo da plataforma (iOS, Android e Wind
 \begin{figure}[h]
   \centering
   \includegraphics[scale=.4]{imagens/hello_world_ionic.png}
-  \caption{Página em Ionic resultado  das Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html}}
+  \caption{Página em \textit{Ionic} resultado  das Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html}}
   \label{fig:hello_world_ionic}
 \end{figure}
-
 
 \subsubsection{Components}
 
 Os elementos visuais e também o comportamento desses elementos em uma página
 são normalmente construídos por meio dos \textit{components} ou componentes.
 Os componentes permitem criar facilmente a interface do aplicativo. Exemplo de
-componentes são botões, modals, popup e cards. Um aspecto interessante é que
+componentes são botões, \textit{modals, popup} e \textit{cards}. Um aspecto interessante é que
 os componentes se adaptam visualmente a cada plataforma, como já mostramos na \autoref{fig:hello_world_ionic}.
 Além do aspecto visual eles também se comportam de maneira diferente dependendo da plataforma.
 Por comportamento, entende-se, por exemplo, os efeitos visuais de cada componente e também efeitos
-de  transição entre as páginas.
+de  transição entre as páginas. A \autoref{fig:ionic_components} ilustra alguns componentes
+disponíveis no \textit{Ionic}.
 
 \begin{figure}
   \centering
@@ -425,13 +422,13 @@ de  transição entre as páginas.
   \subfloat[Action Sheets]{
     \includegraphics[scale=0.3,valign=t]{imagens/cmp6.png}
   }
-  \caption{Exemplo de componentes no Ionic}
-  \label{fig:backlog}
+  \caption{Exemplo de componentes no \textit{Ionic}}
+  \label{fig:ionic_components}
 \end{figure}
 
 \subsection{Estrutura do Framework: \textit{FeathersJS}}
 
-\textit{FeathersJS} é um framework de código livre de desenvolvimento rápido para aplicações
+\textit{FeathersJS} é um \textit{framework} de código livre de desenvolvimento rápido para aplicações
 web em tempo-real escritas em JavaScript. Disponibiliza uma arquitetura simples mas poderosa
 para a construção de aplicações utilizando padrões de programação orientada a aspectos e serviços.
 Os principais componentes do \textit{FeathersJS} são os \textit{services}, \textit{hooks} e
@@ -442,7 +439,8 @@ Os principais componentes do \textit{FeathersJS} são os \textit{services}, \tex
 \textit{Services} ou serviços são a camada principal do \textit{\textit{FeathersJS}}.
 Um serviço é simplesmente uma instância de uma classe JavaScript
 que implementa métodos básicos para criação, consulta, atualização e
-destruição de dados ou operações CRUD (\textit{create, read, update, delete}).
+destruição de dados. Esse conjunto de operações ou funcionalidades é conhecido como
+CRUD (\textit{Create, Read, Update, Delete}).
 
 Os serviços no \textit{FeathersJS} expõem uma interface uniforme de acesso, permitindo
 assim fornecer uma única API tanto para chamadas HTTP REST e \textit{websockets}.
@@ -563,5 +561,5 @@ A utilização do \textit{FeathersJS} simplificou muito o processo de construç�
 do software por disponibilizar facilidades para o programador e implementar
 uma API de tempo-real via serviços de forma nativa. Além disso, a interface dos
 serviços \autoref{fig:service_interface} torna fácil a integração com qualquer banco de dados.
-Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitindo integração
+Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitem uma integração
 com uma variedade de banco de dados por meio de uma interface única.
