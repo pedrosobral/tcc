@@ -11,7 +11,7 @@ Nela é possível perceber as três abas principais do sistema. A primeira \text
 está selecionada, permite ao professor gerir um banco de questões criadas, iniciar uma
 sessão com questões selecionadas e categorizar as questões para uma melhor organização das mesmas.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Aba \textit{Questões}}
   \includegraphics[scale=.40]{imagens/telas/main_window}
@@ -24,13 +24,13 @@ sessão com questões selecionadas e categorizar as questões para uma melhor or
 
 Um dos requisitos do sistema era permitir ao professor realizar a frequência dos alunos
 pelo aplicativo. O sistema gera um código aleatório de quatro digitos e permite aos estudantes
-submeterem esse código pelo aplicativo ($ver$ FIGURA XX). O professor pode ativar a frequência
-clicando no botão \textit{Frequência} no canto superior direito da aba \textit{Questões} ($ver$ \autoref{fig:main_window}).
+submeterem esse código pelo aplicativo. O professor pode ativar a frequência
+clicando no botão \textit{Frequência} no canto superior direito da aba \textit{Questões} (\autoref{fig:main_window}).
 Em seguida, o sistema muda para a aba \textit{Ao Vivo}, tendo como resultado a \autoref{fig:live_freq}.
 Nela é possível perceber o código de aleatório de quatro dígitos que foi gerado e alguns botões de ação no canto
 inferior direto, permitindo ao professor encerrar a frequência por exemplo.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Página para a realizar a frequência dos estudantes}
   \includegraphics[scale=.45]{imagens/telas/live_freq}
@@ -42,7 +42,7 @@ Posteriormente, o professor pode acessar a lista de frequência por meio do aba 
 clicando para cada turma a opção de \textit{atividades}, \autoref{fig:atividades}. A \autoref{fig:list_freq} exibe a
 lista de frequência em detalhes.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Página para a realizar a frequência dos estudantes}
   \includegraphics[scale=.45]{imagens/telas/atividades}
@@ -50,7 +50,7 @@ lista de frequência em detalhes.
   \label{fig:atividades}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Página para a realizar a frequência dos estudantes}
   \includegraphics[scale=.45]{imagens/telas/list_freq}
@@ -65,7 +65,7 @@ A \autoref{fig:new_question} exibe o formulário para o cadastro de uma nova que
 A aplicação permite a criação de questões de múltipla escolha, verdadeiro e falso e questão aberta.
 Em questões do tipo múltipla escolha o professor deve indicar uma alternativa como correta.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Formulário \textit{Nova Questão}}
   \includegraphics[scale=.5]{imagens/telas/new_question}
@@ -82,11 +82,11 @@ e \textit{turmas privadas}. Uma turma pública é aquele em que não existe uma
 lista de alunos cadastrados, ou seja, qualquer aluno com o código de acesso da turma
 vai poder acessar e participar das atividades apenas digitando o código de acesso.
 
-Quando uma lista de estudantes é adicionada em uma turma ($ver$ \autoref{fig:add_students}) ela se
+Quando uma lista de estudantes é adicionada em uma turma (a \autoref{fig:add_students} ilustre esse processo) ela se
 torna uma turma privada. Quando os estudantes acessarem a turma eles terão que
 digitar além do código da turma, o código de identificação de cada um que foi cadastrado no sistema.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Aba \textit{Turmas}}
   \includegraphics[scale=.4]{imagens/telas/admin_classes}
@@ -110,7 +110,7 @@ A importação do arquivo CSV trata a primeira linha como o cabelçalho de colun
 e deve conter exclusivamente \texttt{name,id}. Nas outras linhas deve incluir
 primeiro o nome do estudante e depois o código de identificação.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Adicionar estudantes em uma turma}
   \includegraphics[scale=.4]{imagens/telas/add_students}
@@ -118,7 +118,7 @@ primeiro o nome do estudante e depois o código de identificação.
   \label{fig:add_students}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{Exemplo de arquivo CSV válido para importar uma lista de estudantes}
 \begin{lstlisting}[language=JavaScript]
   name,id
@@ -154,7 +154,7 @@ destaca da aba \textit{Questões} um exemplo de duas questões selecionadas e o 
 \textit{INICIAR SESSÃO} no canto superior direto. Quando o professor inicia uma sessão,
 o sistema redireciona para a aba \textit{Ao Vivo} projetando a primeira questão selecionada (\autoref{fig:live})
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Aba \textit{Questões}}
   \includegraphics[scale=.50]{imagens/telas/session_details}
@@ -170,13 +170,14 @@ o código para acesso da sala fica visível para os estudantes, no caso \textit{
 No canto inferior direito da \autoref{fig:live}, o professor tem acesso a um conjunto de
 funcionalidades para controlar a sessão. A opção \textit{Ativar votação}, quando selecionada
 permite ao professor disponibilizar para os alunos a questão que está sendo exibida para que
-eles possam responder no aplicativo ($ver$ \autoref{}). As opções \textit{Mostrar resposta}
-e \textit{Mostrar resultado} permitem respectivamente indicar na tela a alternativa correta e
-exibir na tela como os estudantes responderam. No canto superior direito da tela um número é incrementado indicando
-a quantidade de alunos que já responderam a questão. A \autoref{fig:live_answers} ilustra quando
+eles possam responder no aplicativo (a \autoref{subsecao:alunosrespondem} detalha esse processo).
+As opções \textit{Mostrar resposta} e \textit{Mostrar resultado} permitem respectivamente indicar
+na tela a alternativa correta e exibir na tela como os estudantes responderam.
+No canto superior direito da tela um número é incrementado indicando a quantidade de 
+alunos que já responderam a questão. A \autoref{fig:live_answers} ilustra quando
 todas essas opções estão selecionadas.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Adicionar estudantes em uma turma}
   \includegraphics[scale=.4]{imagens/telas/live}
@@ -184,7 +185,7 @@ todas essas opções estão selecionadas.
   \label{fig:live}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Adicionar estudantes em uma turma}
   \includegraphics[scale=.4]{imagens/telas/live_answers}
@@ -203,7 +204,7 @@ Clicando em um item dessa lista, é possível ver como cada estudante respondeu 
 desempenho geral da turma por questão. A \autoref{fig:session_students_details}  exibe o
 desempenho de cada estudante por questão e a percentagem de acerto na sessão.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Adicionar estudantes em uma turma}
   \includegraphics[scale=.4]{imagens/telas/sessions}
@@ -211,7 +212,7 @@ desempenho de cada estudante por questão e a percentagem de acerto na sessão.
   \label{fig:sessions}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Adicionar estudantes em uma turma}
   \includegraphics[scale=.4]{imagens/telas/session_students_details}
@@ -227,7 +228,7 @@ A \autoref{fig:app_home} exibe a tela inicial do aplicativo em que é possível 
 um campo para que os estudantes possam digitar o código de acesso da turma, conforme detalhou-se
 na \autoref{subsection:turmas}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
 
   \caption{Tela inicial da aplicação móvel do estudante}
@@ -257,7 +258,7 @@ exibe uma mensagem e um campo para que o estudante digite o código de
 identificação único do estudante. A \autoref{fig:app_ask_b}, exibe a tela
 quando o estudante digita o código correto, detalhando o nome do estudante, do professor e da turma.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
 
   \caption{Tela de identificação dos estudantes}
@@ -285,7 +286,7 @@ direito, como mostra na \autoref{fig:freqa}. Em seguida, quando o estudante
 clica nesse botão, o aplicativo exibe uma mensagem e um campo para que os
 estudantes digitem o código disponibilizado pelo professor (\autoref{fig:freqb}).
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
 
   \caption{Telas para os estudantes realizarem a frequência}
@@ -298,12 +299,13 @@ estudantes digitem o código disponibilizado pelo professor (\autoref{fig:freqb}
     \includegraphics[scale=.4]{imagens/telas/student_freq2}
     \label{fig:freqb}
   }
+  \label{fig:freqalunos}
 
   \doautor
 \end{figure}
 
 
-\subsection{Responder questões}
+\subsection{Responder questões}\label{subsecao:alunosrespondem}
 
 O sistema permite ao professor criar questões de múltipla escolha e
 de resposta livre. A \autoref{fig:student_q} ilustra como fica
@@ -311,7 +313,7 @@ apresentado no aplicativo as questões. A \autoref{fig:student_qa} exibe
 uma questão de verdadeiro e falso e a \autoref{fig:student_qb} ilustra
 uma questão aberta.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \caption{Diferentes tipos de questões no aplicativo}
 
