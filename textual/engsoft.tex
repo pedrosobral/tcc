@@ -366,7 +366,7 @@ uma página de um aplicativo desenvolvido em \textit{Ionic}. O resultado dessa p
 na \autoref{fig:hello_world_ionic}. Observe que com apenas um código base, os elementos
 visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \textit{Android} e \textit{Windows}).
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{lstlisting}[language=JavaScript]
   import { Component } from '@angular/core';
 
@@ -382,7 +382,7 @@ visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \text
 \label{fig:hello_ionic_ts}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \begin{lstlisting}[language=ionicHtml]
   <ion-header>
     <ion-navbar>
@@ -413,7 +413,7 @@ visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \text
 \label{fig:hello_ionic_html}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[scale=.4]{imagens/hello_world_ionic.png}
   \caption{Página em \textit{Ionic} resultado  das Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html}}
@@ -596,3 +596,52 @@ uma API de tempo-real via serviços de forma nativa. Além disso, a interface do
 serviços \autoref{fig:service_interface} torna fácil a integração com qualquer banco de dados.
 Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitem uma integração
 com uma variedade de banco de dados por meio de uma interface única.
+
+\subsection{Implementação}
+
+Os items da lista de tarefas da \autoref{fig:backlog} foram desenvolvidos de forma incremental.
+Para cada história de usuário desenvolvida, procurava-se desenvolver os critérios de aceitação da mesma.
+Os critérios de aceitação geralmente definem o comportamento esperado da funcionalidade desenvolvida pela história.
+Dessa forma, eles são úteis para definir quando uma história foi finalizada e implementada de forma correta.
+
+Os critérios de aceitção foram escritos usando o formato utilizado no desenvolvimento dirigido por
+comportamento (\textit{Behavior-Driven Development (BDD)}). Assim, descreve-se o comportamento no seguinte formato:
+
+\begin{description}
+  \item[Dado que (\textit{Given}):] determinadas pré-condições são atendidadas;
+  \item[Quando (\textit{When}):] um determinado evento ocorre;
+  \item[Então (\textit{Then}):] isso deve acontecer.
+\end{description}
+Considere por exemplo, a história de usuário:
+\begin{description}
+  \item[Como] professor
+  \item[Gostaria] ser capaz de criar (questões de múltipla escolha | verdadeiro e falso | questões abertas)
+  \item[para] que eu tenha variedade de perguntas para explorar.
+\end{description}
+Tem-se os seguintes critérios de aceitação:
+\begin{enumerate}
+  \item
+  \begin{description}
+    \item[Dado que] o professor pode criar uma questão
+    \item[Quando] ele escolher criar uma questão do tipo múltipla escolha
+    \item[E] preencher o campo \textit{questão}
+    \item[E] adicionar pelo menos duas alternativas
+    \item[E] escolher uma alternativa como a correta
+    \item[E] clicar no botão \textit{CONCLUÍDO}
+    \item[Então] o sistema deve permitir salvar a questão
+    \item[E] indicar que a questão foi salva com sucesso
+    \item[E] eu devo ser redirecionado para a aba \textit{Questões}.
+  \end{description}
+
+  \item
+  \begin{description}
+    \item[Dado que] o professor pode criar uma questão
+    \item[Quando] ele escolher criar uma questão do tipo múltipla escolha
+    \item[E] preencher o campo \textit{questão}
+    \item[E] não adicionar pelo menos duas alternativas
+    \item[E] não escolher uma alternativa como a correta
+    \item[Então] o sistema não deve permitir salvar a questão
+    \item[E] indicar que é necessário adicionar pelo menos duas alternativas
+    \item[E] indicar que é necessário escolher uma alternativa como a correta.
+  \end{description}
+\end{enumerate}
