@@ -284,13 +284,14 @@ categorizar as questões para permitir um agrupamento de questões teve uma prio
 \begin{figure}[!ht]
   \centering
 
+  \caption{Requisitos iniciais para o sistema em forma de histórias de usuário}
   \subfloat{
     \includegraphics[scale=0.65,valign=t]{imagens/backlog1.png}
   }
   \subfloat{
     \includegraphics[scale=0.65,valign=t]{imagens/backlog2.png}
   }
-  \caption{Requisitos iniciais para o sistema em forma de histórias de usuário}
+  \doautor
   \label{fig:backlog}
 \end{figure}
 
@@ -383,6 +384,7 @@ visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \text
 \end{figure}
 
 \begin{figure}[ht]
+\caption{HelloIonicPage: elementos visuais da página}
 \begin{lstlisting}[language=ionicHtml]
   <ion-header>
     <ion-navbar>
@@ -409,14 +411,15 @@ visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \text
 
   </ion-content>
 \end{lstlisting}
-\caption{HelloIonicPage: elementos visuais da página}
+\doautor
 \label{fig:hello_ionic_html}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=.4]{imagens/hello_world_ionic.png}
   \caption{Página em \textit{Ionic} resultado  das Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html}}
+  \includegraphics[scale=.4]{imagens/hello_world_ionic.png}
+  \doautor
   \label{fig:hello_world_ionic}
 \end{figure}
 
@@ -435,6 +438,7 @@ disponíveis no \textit{Ionic}.
 \begin{figure}
   \centering
 
+  \caption{Exemplo de componentes no \textit{Ionic}}
   \subfloat[List]{
     \includegraphics[scale=0.3,valign=t]{imagens/cmp1.png}
   }
@@ -455,7 +459,7 @@ disponíveis no \textit{Ionic}.
   \subfloat[Action Sheets]{
     \includegraphics[scale=0.3,valign=t]{imagens/cmp6.png}
   }
-  \caption{Exemplo de componentes no \textit{Ionic}}
+  \fonte{}
   \label{fig:ionic_components}
 \end{figure}
 
@@ -481,6 +485,7 @@ Os verbos HTTP (GET, POST, PUT, PATCH e DELETE) têm a correspondência com
 os métodos de um serviço no \textit{\textit{FeathersJS}} listados na \autoref{fig:service_interface}.
 
 \begin{figure}[h]
+\caption{Interface de um serviço}
 \begin{lstlisting}[language=JavaScript]
 const meuServico = {
   // GET /path
@@ -497,7 +502,7 @@ const meuServico = {
   remove(id, params, callback) {}
 }
 \end{lstlisting}
-\caption{Interface de um serviço}
+\doautor
 \label{fig:service_interface}
 \end{figure}
 
@@ -523,6 +528,7 @@ em que é adicionado a propriedade \texttt{createdAt} antes (\textit{before}) da
 e a propriedade \texttt{updatedAt} quando uma questão é modificada (\textit{update} e \textit{patch}), ($\ell.\,7-13$).
 
 \begin{figure}[h]
+\caption{Exemplo registro de \textit{hooks} no \textit{\textit{FeathersJS}}}
 \begin{lstlisting}[language=JavaScript]
   app.service('questions').hooks({
     before: {
@@ -540,7 +546,7 @@ e a propriedade \texttt{updatedAt} quando uma questão é modificada (\textit{up
       }
   });
 \end{lstlisting}
-\caption{Exemplo registro de \textit{hooks} no \textit{\textit{FeathersJS}}}
+\doautor
 \label{fig:hooks_example}
 \end{figure}
 
@@ -560,6 +566,7 @@ Nesse caso, os clientes de uma aplicação de votação, por exemplo, poderiam
 receber as questões da votação publicada por outro cliente e então responder.
 
 \begin{figure}[h]
+\caption{Exemplo eventos no \textit{\textit{FeathersJS}}}
 \begin{lstlisting}[language=JavaScript]
   // Retrieve the wrapped service object which will be an event emitter
   const poll = app.service('poll');
@@ -569,7 +576,7 @@ receber as questões da votação publicada por outro cliente e então responder
     console.log('New poll created', poll);
   });
 \end{lstlisting}
-\caption{Exemplo eventos no \textit{\textit{FeathersJS}}}
+\doautor
 \label{fig:events_example}
 \end{figure}
 
@@ -583,10 +590,11 @@ pela camada de \textit{before hooks}, o método requisitado pode completar com s
 \textit{after hooks} e enviando um evento para os clientes conectados. Qualquer erro no processo
 é enviado para a camada \textit{error hooks} que também pode notificar os clientes da aplicação.
 
-\begin{figure}
+\begin{figure}[!ht]
   \centering
-  \includegraphics[scale=0.45,valign=t]{imagens/feathers_request.jpeg}
   \caption{Como o ciclo de uma requisição funciona no \textit{FeathersJS}}
+  \includegraphics[scale=0.45,valign=t]{imagens/feathers_request.jpeg}
+  \fonte{}
   \label{fig:feathers_request}
 \end{figure}
 
@@ -645,3 +653,95 @@ Tem-se os seguintes critérios de aceitação:
     \item[E] indicar que é necessário escolher uma alternativa como a correta.
   \end{description}
 \end{enumerate}
+
+\subsubsection{Banco de Dados: MongoDB}
+
+O banco de dados utilizado foi o MongoDB que é um banco de dados NoSQL orientado a documentos.
+Em tais bancos os dados são \textit{semiestruturados}. Dados semiestruturados
+são dados em que o esquema de representação está presente em conjunto com o dado, ou seja,
+eles são \textit{auto-descritivos}. As nomenclaturas do MongoDb diferem dos
+bancos relacionais. A \autoref{tab:relvsmongo} apresenta como eles se relacionam.
+
+O MongoDB armazena os dados no formato chamado BJSON (Binary JSON). O BJSON extende
+o JSON (JavaScript Object Notation) incluindo suporte para tipos de dados
+\texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON contem
+um ou mais campos, e cada campo um valor de um tipo específico, incluíndo vetores, dados
+binários, e outros sub-documentos. A \autoref{fig:mongodocument} apresenta um
+exemplo de um documento em MongoDB.
+
+Documentos (ou \textit{documents}) que tendem a compartilhar a mesma estrutura
+são organizados como \textit{coleções} (ou \textit{collections}). Coleções são
+análogas a uma tabela em um banco de dados relacional, documentos são similares
+a registros ou linhas, e campos são parecidos com as colunas.
+
+
+\begin{table}[!ht]
+  \centering
+  \caption{Nomenclaturas dos banco de dados relacionais $versus$ MongoDB}
+  \begin{tabular}{l||l}
+    \hline
+    \textbf{Banco Relacional} & \textbf{MongoDB}\tabularnewline
+    \hline
+    \hline
+    Base de dados & Base de dados\tabularnewline
+    Tabela & Coleção\tabularnewline
+    Registro & Documento\tabularnewline
+    Coluna & Campo\tabularnewline
+    Índice & Índice\tabularnewline
+    Join & Documento Embarcado\tabularnewline
+    Chave estrangeira & Referência\tabularnewline
+    \hline
+  \end{tabular}
+  \doautor
+  \label{tab:relvsmongo}
+\end{table}
+
+\begin{figure}[ht]
+  \caption{Exemplo de um documento em MongoDB}
+  \begin{lstlisting}[language=JavaScript]
+  {
+  	"_id" : ObjectId("59526b5801f55103c054779c"),
+  	"name" : "Engenharia de Software",
+  	"code" : "ENGSOFT123",
+  	"user" : ObjectId("59526b2001f55103c054779b"),
+  	"updatedAt" : ISODate("2017-06-27T14:27:36.113Z"),
+  	"createdAt" : ISODate("2017-06-27T14:27:36.113Z"),
+  	"peopleOnline" : -2,
+  	"private" : true,
+  	"online" : true,
+  	"students" : [
+  		{
+  			"_id" : ObjectId("59526b7601f55103c054779e"),
+  			"online" : false,
+  			"id" : "102",
+  			"name" : "Paulo"
+  		},
+  		{
+  			"_id" : ObjectId("59526b7601f55103c054779d"),
+  			"online" : false,
+  			"id" : "101",
+  			"name" : "Pedro"
+  		}
+  	],
+  	"__v" : 0
+  }
+  \end{lstlisting}
+  \doautor
+  \label{fig:mongodocument}
+\end{figure}
+
+A \autoref{fig:database} exibe uma versão simplificada de como os dados
+foram estruturados. O sistema tem basicamente quatro coleções:
+\textit{User (Usuário), Poll (votação), Room (Sala), Attendance (Frequência), Question (Questão)}.
+Nesse esquema, as questões (\textit{question}) são sub-documentos dentro de uma votação (\textit{poll}), dessa forma,
+com apenas uma leitura no banco de dados é possível obter toda a informação de uma votação.
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Diagrama do banco de dados orientado a documentos}
+  \includegraphics[scale=0.75,valign=t]{imagens/database}
+  \doautor
+  \label{fig:database}
+\end{figure}
+
+\subsection{Testes Automatizados}
