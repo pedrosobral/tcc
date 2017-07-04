@@ -439,6 +439,7 @@ disponíveis no \textit{Ionic}.
   \centering
 
   \caption{Exemplo de componentes no \textit{Ionic}}
+  \label{fig:ionic_components}
   \subfloat[List]{
     \includegraphics[scale=0.3,valign=t]{imagens/cmp1.png}
   }
@@ -460,7 +461,6 @@ disponíveis no \textit{Ionic}.
     \includegraphics[scale=0.3,valign=t]{imagens/cmp6.png}
   }
   \fonte{}
-  \label{fig:ionic_components}
 \end{figure}
 
 \subsection{Estrutura do Framework: \textit{FeathersJS}}
@@ -471,8 +471,7 @@ para a construção de aplicações utilizando padrões de programação orienta
 Os principais componentes do \textit{FeathersJS} são os \textit{services}, \textit{hooks} e
 \textit{events} que são detalhados nas próximas seções.
 
-\subsubsection{Services}
-
+\subsubsection{Services}\label{subsection:feathers_services}
 \textit{Services} ou serviços são a camada principal do \textit{\textit{FeathersJS}}.
 Um serviço é simplesmente uma instância de uma classe JavaScript
 que implementa métodos básicos para criação, consulta, atualização e
@@ -486,6 +485,7 @@ os métodos de um serviço no \textit{\textit{FeathersJS}} listados na \autoref{
 
 \begin{figure}[h]
 \caption{Interface de um serviço}
+\label{fig:service_interface}
 \begin{lstlisting}[language=JavaScript]
 const meuServico = {
   // GET /path
@@ -503,7 +503,6 @@ const meuServico = {
 }
 \end{lstlisting}
 \doautor
-\label{fig:service_interface}
 \end{figure}
 
 \subsubsection{Hooks}
@@ -529,6 +528,7 @@ e a propriedade \texttt{updatedAt} quando uma questão é modificada (\textit{up
 
 \begin{figure}[h]
 \caption{Exemplo registro de \textit{hooks} no \textit{\textit{FeathersJS}}}
+\label{fig:hooks_example}
 \begin{lstlisting}[language=JavaScript]
   app.service('questions').hooks({
     before: {
@@ -547,7 +547,6 @@ e a propriedade \texttt{updatedAt} quando uma questão é modificada (\textit{up
   });
 \end{lstlisting}
 \doautor
-\label{fig:hooks_example}
 \end{figure}
 
 \subsubsection{Events}
@@ -567,6 +566,7 @@ receber as questões da votação publicada por outro cliente e então responder
 
 \begin{figure}[h]
 \caption{Exemplo eventos no \textit{\textit{FeathersJS}}}
+\label{fig:events_example}
 \begin{lstlisting}[language=JavaScript]
   // Retrieve the wrapped service object which will be an event emitter
   const poll = app.service('poll');
@@ -577,7 +577,6 @@ receber as questões da votação publicada por outro cliente e então responder
   });
 \end{lstlisting}
 \doautor
-\label{fig:events_example}
 \end{figure}
 
 \subsubsection{Visão geral}
@@ -698,6 +697,7 @@ a registros ou linhas, e campos são parecidos com as colunas.
 
 \begin{figure}[ht]
   \caption{Exemplo de um documento em MongoDB}
+  \label{fig:mongodocument}
   \begin{lstlisting}[language=JavaScript]
   {
   	"_id" : ObjectId("59526b5801f55103c054779c"),
@@ -727,7 +727,6 @@ a registros ou linhas, e campos são parecidos com as colunas.
   }
   \end{lstlisting}
   \doautor
-  \label{fig:mongodocument}
 \end{figure}
 
 A \autoref{fig:database} exibe uma versão simplificada de como os dados
@@ -742,6 +741,185 @@ com apenas uma leitura no banco de dados é possível obter toda a informação 
   \includegraphics[scale=0.75,valign=t]{imagens/database}
   \doautor
   \label{fig:database}
+\end{figure}
+
+\subsection{Servidor: FeathersJS}
+
+O principal componente de uma aplicação desenvolvida com o \textit{FeathersJS} é um
+serviço. Os serviços foram explicados em detalhes na \autoref{subsection:feathers_services}.
+
+Cada coleção do banco de dados mostrado na \autoref{fig:database} foi desenvolvido um
+serviço correspondente no \textit{FeathersJS}. Para auxiliar nesse processo, o \textit{FeathersJS} conta com
+uma ferramenta para tornar ainda mais rápido o processo de desenvolvimento de aplicações.
+Um deles é o utilitário de linha de comando \texttt{feathers} capaz de gerar
+os principais componentes do \textit{framework} como os serviços e hooks.
+
+A \autoref{fig:feathers_generate} ilustra a utilização da ferramenta para a geração do serviço
+\textit{question} do tipo \textit{MongoDB}. Nesse exemplo, como o serviço é do tipo MongoDB, ao
+final do processo tem-se uma REST API totalmente funcional, por não ser preciso definir um modelo do serviço.
+Se um banco de dados relacional fosse usado como o tipo do serviço, teria-se que desenvolver o modelo do esquema da tabela primeiro.
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Interface de linha de comando da ferramenta \texttt{feathers}}
+  \label{fig:feathers_generate}
+  \includegraphics[scale=0.6,valign=t]{imagens/feathers_generate}
+  \doautor
+\end{figure}
+
+\subsection{Frontend: Ionic}
+
+Uma das características interessantes do FeathersJS é que ele também funciona
+como cliente no navegador exatamente da mesma forma como no servidor.
+A \autoref{fig:feathers_provider}, mostra um serviço que faz parte da aplicação web desenvolvida em Ionic,
+que é responsável por obter as informações nesse caso específico \textit{Poll (votação)}.
+
+Na ($\ell.\,2$) importa-se a classe responsável por fazer a conexão com o servidor e que também
+expõem alguns métodos como por exemplo para obter uma referência de um serviço do servidor ($\ell.\,6$). Na ($\ell.\,11-13$)
+tem-se o método para criar uma votação. Na ($\ell.\,16-23$), o método \texttt{poll(room)} retorna uma votação
+que tenha um código específico de uma sala ($\ell.\,19$) e que não ainda não tenha sido encerrada ($\ell.\,20$).
+
+\begin{figure}[!ht]
+  \caption{\textit{PollService} - serviço para prover informações do serviço de votações}
+  \label{fig:feathers_provider}
+  \begin{lstlisting}[language=JavaScript]
+    import { Injectable } from '@angular/core';
+    import { FeathersProvider } from './feathers';
+
+    @Injectable()
+    export class PollService {
+      polls = this.app.service('polls');
+
+      constructor(public app: FeathersProvider) { }
+
+      // create a poll
+      create(poll) {
+        return this.polls.create(poll);
+      }
+
+      // get poll info
+      poll(room: any) {
+        return this.polls.find({
+          query: {
+            'room.code': room.code,
+            isOver: false,
+          }
+        });
+      }
+    }
+  \end{lstlisting}
+  \doautor
+\end{figure}
+
+Agora que o acesso ao serviço foi definido, desenvolve-se a página que vai
+fazer uso do serviço criado. No exemplo da \autoref{fig:ionic_pollpage}, tem-se
+a página de votação no aplicativo do aluno, representada pelo arquivo \textit{poll.ts}.
+Inicia-se importando os serviços usado na página ($\ell.\,1-6$), como por exemplo o \textit{PollService}
+apresentado anteriormente na \autoref{fig:feathers_provider}. Na ($\ell.\,20$), exibe
+o uso do método poll que obtém uma votação disponível de uma turma. Como última parte
+da página, falta definir os componentes de visualização. No exemplo da \autoref{fig:ionic_pollpage_html}
+segue a definição visual da página de votação do aplicativo do estudante representada pelo
+arquivo \textit{poll.html}. Esse arquivo é responsável por representar a interface gráfica e interagir
+com os estudantes. Nessa página, quando não existe uma questão disponível para votação, ela
+exibe as informações do estudante, da sala e do professor ($\ell.\,10-23$). Quando o professor habilita uma questão
+para votação, a página passa a exibir a questão, as alternativas e o botão para responder ($\ell.\,25-47$).
+
+\begin{figure}[!ht]
+  \caption{Parte de página de votação da aplicação aluno - \textit{poll.ts}}
+  \label{fig:ionic_pollpage}
+  \begin{lstlisting}[language=JavaScript]
+    import {
+      AttendanceProvider,
+      FeathersProvider,
+      PollService,
+      RoomsProvider,
+    } from '../../providers/providers';
+
+    @IonicPage({
+      segment: 'poll/:id',
+      defaultHistory: ['HomePage']
+    })
+    @Component({
+      selector: 'page-poll',
+      templateUrl: 'poll.html',
+    })
+    export class PollPage {
+      constructor(public pollService: PollService) { }
+
+      initPoll() {
+        this.pollService.poll({ code: this.code })
+          .subscribe((poll) => {
+            if (poll.data.length > 0 && poll.data[0].available !== -1) {
+              this.poll = poll.data[0];
+              this.question = this.poll.questions[this.poll.available];
+
+              if (this.checkAlreadyAnswered(this.question)) {
+                this.poll = null;
+              }
+            } else {
+              this.poll = null;
+            }
+          });
+      }
+    }
+  \end{lstlisting}
+\doautor
+\end{figure}
+
+\begin{figure}[!ht]
+  \caption{Parte de página de votação da aplicação aluno - \textit{poll.html}}
+  \label{fig:ionic_pollpage_html}
+  \begin{lstlisting}[language=HTML]
+    <ion-header>
+
+      <ion-navbar>
+        <ion-title>{{room?.name}} #{{code}}</ion-title>
+      </ion-navbar>
+
+    </ion-header>
+
+    <ion-content padding>
+      <div *ngIf='!poll'>
+
+        <div class='welcome'>
+          <p>
+            <span *ngIf='!student?.name'>Bem</span>
+            <span *ngIf='student?.name'>
+        <span ion-text color='primary'>{{student?.name}}</span>, bem
+            </span> vindo a apresentação de <span ion-text color='primary'>{{room?.user?.name}}</span> na turma de <span ion-text color='primary'>{{room?.name}}</span>
+          </p>
+          <p>
+            Assim que {{room?.user?.name.split(' ')[0]}} ativar uma atividade, você vai poder participar aqui.
+          </p>
+        </div>
+      </div>
+
+      <div *ngIf='poll'>
+        <div class='question'>
+          <span>{{question?.question}}</span>
+        </div>
+
+        <div class 'description'>
+          <span>{{question?.description}}</span>
+        </div>
+
+        <ion-list *ngIf 'question?.type !== 'free ' radio-group [(ngModel)]'answer '>
+          <ion-item *ngFor='let option of question.options; let i=index '>
+            <ion-label>{{option.text}}</ion-label>
+            <ion-radio [value]'option '></ion-radio>
+          </ion-item>
+        </ion-list>
+
+        <ion-item *ngIf 'question?.type==='free '>
+          <ion-label stacked>Resposta</ion-label>
+          <ion-textarea placeholder 'Digite aqui a sua resposta ' [(ngModel)] 'answer '></ion-textarea>
+        </ion-item>
+
+          <button (click) 'submit(answer) ' ion-button color 'primary ' full>ENVIAR</button>
+      </div>
+    </ion-content>
+\end{lstlisting}
+\doautor
 \end{figure}
 
 \subsection{Testes Automatizados}
