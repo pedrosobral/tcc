@@ -604,7 +604,7 @@ serviços \autoref{fig:service_interface} torna fácil a integração com qualqu
 Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitem uma integração
 com uma variedade de banco de dados por meio de uma interface única.
 
-\subsection{Implementação}
+\subsection{Implementação}\label{subsection:implementation}
 
 Os items da lista de tarefas da \autoref{fig:backlog} foram desenvolvidos de forma incremental.
 Para cada história de usuário desenvolvida, procurava-se desenvolver os critérios de aceitação da mesma.
@@ -886,11 +886,6 @@ para votação, a página passa a exibir a questão, as alternativas e o botão 
             <span *ngIf='!student?.name'>Bem</span>
             <span *ngIf='student?.name'>
         <span ion-text color='primary'>{{student?.name}}</span>, bem
-            </span> vindo a apresentação de <span ion-text color='primary'>{{room?.user?.name}}</span> na turma de <span ion-text color='primary'>{{room?.name}}</span>
-          </p>
-          <p>
-            Assim que {{room?.user?.name.split(' ')[0]}} ativar uma atividade, você vai poder participar aqui.
-          </p>
         </div>
       </div>
 
@@ -923,3 +918,182 @@ para votação, a página passa a exibir a questão, as alternativas e o botão 
 \end{figure}
 
 \subsection{Testes Automatizados}
+
+Para garantir a qualidade do software desenvolvido, desenvolveu-se testes
+automatizados para avaliar se o software estava sendo desenvolvido como esperado.
+
+A base para desenvolver os testes automatizados foram os critérios de aceitação de cada história de usuário.
+Alguns exemplos de critérios de aceitação foram desritos na \autoref{subsection:implementation}.
+
+As ferramentas utilizadas nesse processo foram os \textit{framework} de teste \textit{Jasmine} e o \textit{Protractor}.
+
+\subsubsection{Jasmine}
+
+Jasmine é um \textit{framework open-source} BDD para testar código JavaScript, que não depende de nenhum outro \textit{framework}.
+
+Um conjunto de testes ou suíte de testes no Jasmine começa com a chamada da função global do Jasmine
+\texttt{describe} com dois parâmetros: uma \textit{string} e uma função. A \textit{string} é o nome ou título
+para um conjunto de \textit{especificações} e geralmente referem-se ao que está sendo testado.
+
+Uma \textit{especificação} ou \textit{spec} contém uma ou mais \textit{expectativas} que verificam o estado do código.
+Uma especificação é definida com a chamada da função global \textit{it}, com dois parâmetros: uma \textit{string} (título da
+especificação) e uma função (código do teste).
+Uma \textit{expectativa} é uma asserção que tem geralmente como valor verdadeiro ou falso.
+
+O exemplo da \autoref{fig:jamine_example} exibe uma suíte de testes no Jasmine. A suíte de
+testes começa com a chamada da função \texttt{describe} ($\ell.\,1$), e uma especificação.
+A especificação da ($\ell.\,7-9$) espera que seja a chamada da função \texttt{soma} definida
+anteriormente com os parametros 2 e 4 seja igual a 6 ($\ell.\,8$).
+
+\begin{figure}[!ht]
+\caption{Exemplo de uma suíte de testes no Jasmine}
+\label{fig:jamine_example}
+\begin{lstlisting}[language=JavaScript]
+describe("Suite de testes", function () {
+
+  function soma(a, b) {
+    return a + b;
+  }
+
+  it("outra especulacao", function () {
+      expect(soma(2, 4)).toEqual(6);
+  });
+});
+\end{lstlisting}
+\doautor
+\end{figure}
+
+\subsubsection{Protractor}
+
+O Protractor é um \textit{framework open-source}, desenvolvido pela Google, baseado em Node.js, para a criação de testes
+\textit{e2e} (\textit{end-to-end})
+principalmente para aplicações desenvolvidas em AngularJS. O Protractor permite simular usuários interagindo com a
+aplicação, em navegadores reais, como o Chrome e o Firefox. Para isso, ele disponibiliza algumas classes
+que permitem interagir com os elementos da página.
+
+O exemplo da suíte de testes da \autoref{fig:jasmine_protractor} desenvolvido em Jasmine utilizando
+o Protactor ilustra algumas dessas classes que permitem interagir com a aplicação. Por exemplo, na
+($\ell.\,3$) a classe \texttt{browser} permite acessar a URL especificada. Assim que a página carregar,
+simula-se uma pesquisa. Na ($\ell.\,5$) é digitado no campo localizado por CSS a palavra \textit{inicio}.
+Continuando, é localizado o botão para fazer a pesquisa (também localizado por CSS) e então a ação de clique é executada ($\ell.\,6$).
+Por fim, é feita a verificação que o elemento localizado contém o texto especificado ($\ell.\,8$).
+
+\begin{figure}[!ht]
+\caption{Exemplo de uma suíte de testes no Jasmine com o Protractor}
+\label{fig:jasmine_protractor}
+\begin{lstlisting}[language=JavaScript]
+describe('Homepage', () => {
+  it('deve fazer uma pesquisa na pagina de api', () => {
+    browser.get('http://localhost:8080/#/api');
+
+    element(by.css('.searchTerm')).sendKeys('inicio');
+    element(by.css('.searchButton')).click();
+
+    expect(element(by.css('.api-title')).getText()).toContain('browser.inicio');
+  });
+});
+\end{lstlisting}
+\doautor
+\end{figure}
+
+\subsubsection{Teste de aceitação: criar questão}
+
+A suíte de testes do exemplo da \autoref{fig:testes_automatizados} foi desenvolvido seguindo
+os critérios de aceitação da seguinte história de usuário:
+\begin{description}
+  \item[Como] professor
+  \item[Gostaria] ser capaz de criar (questões de múltipla escolha | verdadeiro e falso | questões abertas)
+  \item[para] que eu tenha variedade de perguntas para explorar.
+\end{description}
+O seguinte exemplo descreve um critério de aceitação:
+\begin{description}
+  \item[Dado que] o professor pode criar uma questão
+  \item[Quando] ele escolher criar uma questão do tipo múltipla escolha
+  \item[E] preencher o campo \textit{questão}
+  \item[E] adicionar pelo menos duas alternativas
+  \item[E] escolher uma alternativa como a correta
+  \item[E] clicar no botão \textit{CONCLUÍDO}
+  \item[Então] o sistema deve permitir salvar a questão
+  \item[E] indicar que a questão foi salva com sucesso
+  \item[E] eu devo ser redirecionado para a aba \textit{Questões}.
+\end{description}
+
+Alguns arquivos de configuração do exemplo da \autoref{fig:testes_automatizados} foram
+omitidos para simplificação do exemplo. Antes de chegar nesse teste, um usuário é autenticado
+no sistema, satisfazendo a condição \textit{como professor} ($\ell.\,10-23$), em seguida,
+para atender que \textit{dado que o professor pode criar uma questão}, o sistema deve permitir
+que o professor consiga abrir o formulário para adicionar a questão ($\ell.\,10-23$), na ($\ell.\,10-23$)
+o é verificado se o formulário foi aberto. Continuando, na ($\ell.\,10-23$), o sistema deve
+permitir inserir uma questão de verdadeiro e falso, quando o professor preenche todos os requisitos.
+Na ($\ell.\,10-23$) é esperado que o número de questões seja igual ao que tinha antes mais um, já que
+uma questão foi adicionada. Avançando no teste, outro formulário para adicinoar questão é aberto
+para verificar que o sistema não deve permitir adicionar uma questão de múltipla escolha sem que o
+professor escolha uma alternativa como correta ($\ell.\,10-23$).
+
+\begin{figure}[!ht]
+  \caption{Exemplo de um teste de aceitação automatizado}
+  \label{fig:testes_automatizados}
+  \begin{lstlisting}[language=JavaScript]
+describe('Questions Tab', () => {
+  let questionsTab: QuestionsTab;
+
+  beforeEach(() => {
+    questionsTab = new QuestionsTab();
+  });
+
+  describe('add new questions', () => {
+
+    it('should open new question form', () => {
+      questionsTab.navigateToPage();
+      browser.refresh().then(() => {
+        questionsTab.sleep(1000);
+
+        questionsTab.getAddQuestionButton().click();
+        questionsTab.sleep();
+
+        expect(questionsTab.getModalAddQuestion().isDisplayed()).toBeTruthy();
+      })
+    });
+
+    it('should add true or false question', () => {
+      let form = new NewQuestionPage();
+      form.setQuestionInput('To be or not to be');
+
+      form.setTrueOrFalseQuestionType();
+
+      browser.driver.sleep(500);
+
+      form.selectCorrectAlternative();
+
+      form.save().click();
+
+      browser.driver.sleep(2000);
+
+      questionsTab.getNumQuestions()
+        .then(questions => {
+          expect(questions).toEqual(questionsTab.questions + 1);
+        });
+    });
+
+    it('should not allow mc question without correct option', () => {
+      questionsTab.getAddQuestionButton().click();
+      questionsTab.sleep();
+
+      const form = new NewQuestionPage();
+      form.setQuestionInput('To be or not to be');
+
+      form.addAlternative();
+      form.addAlternative();
+
+      form.setAlternativeText(0, 'TO BE');
+      form.setAlternativeText(1, 'NOT TO BE');
+
+      expect(form.save().isEnabled()).toBeFalsy();
+
+      form.cancel();
+    });
+  });
+});
+\end{lstlisting}
+\doautor
+\end{figure}
