@@ -1030,6 +1030,11 @@ uma questão foi adicionada. Avançando no teste, outro formulário para adicino
 para verificar que o sistema não deve permitir adicionar uma questão de múltipla escolha sem que o
 professor escolha uma alternativa como correta ($\ell.\,10-23$).
 
+A \autoref{fig:protractor_output} exibe o relatório da execução dos teste pelo Jasmine. Outros testes
+que foram desenvolvidos envolveu a utilização dois navegadores abertos ao mesmo tempo, um simulando
+o professor disponibilizando questões, e no outro navegado, um aluno respondendo a questão disponibilizada, dessa forma,
+foi possível testar o software de uma maneira abrangente ao envolver todos os usuários do sistema.
+
 \begin{figure}[!ht]
   \caption{Exemplo de um teste de aceitação automatizado}
   \label{fig:testes_automatizados}
@@ -1096,4 +1101,12 @@ describe('Questions Tab', () => {
 });
 \end{lstlisting}
 \doautor
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Relatório de execução dos testes no Jasmine}
+  \label{fig:protractor_output}
+  \includegraphics[scale=0.6,valign=t]{imagens/jasmine_test}
+  \doautor
 \end{figure}
