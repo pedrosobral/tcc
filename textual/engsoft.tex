@@ -164,7 +164,7 @@ fracos, além da reutilização dos pontos positivos \cite{nielsen_usability}.
 
 Nesse sentido, a análise de competidores foi utilizada neste trabalho para elicitar requisitos e boas práticas
 de design de interfaces. % bem como evitar problemos já identificados pelos concorrentes
-Os resultados obtidos foram utilizados no processo de desenvolvimento do software.
+Os resultados obtidos foram utilizados no desenvolvimento do software.
 
 \subsubsection{\textit{Socrative}}
 
@@ -199,6 +199,7 @@ de discussão e a possibilidade de criar slides dentro do aplicativo.
 
 \begin{center}
 \begin{table}
+\caption{Análise de Competidores}
 \begin{centering}
 \begin{tabular}{>{\centering}m{4cm}||>{\centering}p{4cm}>{\centering}p{3.5cm}c}
 \hline
@@ -223,7 +224,7 @@ Relatórios por estudante & Possibilita & Possibilita & Não\tabularnewline
 \end{tabular}
 \par\end{centering}
 
-\caption{Análise de Competidores}
+\doautor
 \end{table}
 
 \par\end{center}
@@ -233,6 +234,7 @@ Relatórios por estudante & Possibilita & Possibilita & Não\tabularnewline
 A partir das informações coletadas na análise de competidores, foram
 extraídos um conjunto de requisitos iniciais para o sistema. Os requisitos
 funcionais gerados pela análise dos competidores foram então descritos como histórias de usuário.
+A seguir descreve-se os requisitos gerados:
 
 \begin{description}
 \item[Integração com sistemas LMS\nomenclature{LMS}{Learning Management System}]: O sistema deve permitir integração com
@@ -267,13 +269,13 @@ identificar o ambiente do professor, usado para que os alunos respondam.
 
 A metodologia ágil de software, \textit{eXtreme Programming (XP)}, introduziu a
 prática de expressar os requisitos de software na forma de \textit{histórias de usuário},
-que são descricões informais do que o sistema deve fazer, evitando qualquer terminologia técnica.
+que são descricões informais do que  o sistema deve fazer, evitando qualquer terminologia técnica \cite{Sommerville2006}.
 
 As histórias de usuário (\autoref{fig:backlog}), formaram a lista de tarefas do projeto. Essa
 lista de tarefas foi então priorizada, de forma que, por exemplo, desenvolver a arquitetura
 que possibilita-se ao professor apresentar uma questão no quadro e habilitar para os alunos
 responderem foi a primeira tarefa a ser desenvolvida. Por outro lado, a tarefa de permitir
-categorizar as questões para permitir um agrupamento de questões teve uma priorização baixa.
+categorizar as questões para permitir um agrupamento de questões teve uma prioridade baixa.
 
 \begin{figure}[!ht]
   \centering
@@ -300,23 +302,23 @@ categorizar as questões para permitir um agrupamento de questões teve uma prio
   podem ser atribuídas para variáveis).
   Ela é uma linguagem de scripting baseada em protótipos, multi-paradigma e dinâmica, suportando os estilos orientado a objetos, imperativo e funcional.
   Uma das implementações ou \textit{engine} mais populares de JavaScript é o V8 da Google que
-  é utilizada pelo navegador Google Chrome e também pelo Opera.
+  é utilizada pelo navegador Google Chrome e também pelo Opera \cite{javascript}.
   \item[Node.js:] é uma plataforma construída sobre o \textit{engine} V8 da Google
   para construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a
   evento não bloqueante que o torna leve e eficiente, ideal para aplicações em
-  tempo real com troca intensa de dados através de dispositivos distribuídos.
+  tempo real com troca intensa de dados através de dispositivos distribuídos \cite{nodejs}.
   \item[MongoDB:] é um sistema de gerenciamento de banco de dados orientado à documentos.
   Ele é classificado como um banco de dados \textit{NoSQL}, ou seja, o mecanismo de
   armazenamento e recuperação é modelado de outras formas além da forma relacional. O MongoDB  usa o modelo de
-  dados JSON para mapear as aplicações de forma simples e rápida.
+  dados JSON para mapear as aplicações de forma simples e rápida \cite{mongodb}.
 \end{description}
 
 \subsection{Arquitetura}
 
-A \autoref{fig:arquitetura} exibe a arquitetura desenvolvida. O sistema
-consiste dos clientes (aplicação professor e aplicativo dos alunos) que
-fazem a requisição para o servidor desenvolvido na plataforma Node.js com o \textit{framework}
-\textit{FeathersJS}. A comunicação entre os nós clientes e o servidor é por
+A \autoref{fig:arquitetura} exibe a arquitetura do sistema. Ela consiste dos clientes (aplicação professor e aplicativo dos alunos), e do servidor
+desenvolvido na plataforma Node.js com o \textit{framework}
+\textit{FeathersJS} que recebe as requisições dos clientes.
+A comunicação entre o nó cliente e o nó servidor é por
 meio do protocolo \textit{WebSocket}. O servidor faz a interface com o banco de
 dados MongoDB.
 
@@ -412,7 +414,7 @@ visuais da página são diferentes dependendo da plataforma (\textit{iOS}, \text
 \begin{figure}[ht]
   \centering
   \caption{Página em \textit{Ionic} resultado  das Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html}}
-  \includegraphics[scale=.4]{imagens/hello_world_ionic.png}
+  \includegraphics[scale=.34]{imagens/hello_world_ionic.png}
   \doautor
   \label{fig:hello_world_ionic}
 \end{figure}
@@ -454,14 +456,15 @@ disponíveis no \textit{Ionic}.
   \subfloat[Action Sheets]{
     \includegraphics[scale=0.3,valign=t]{imagens/cmp6.png}
   }
-  \fonte{}
+  \fonte{Disponível em: \href{http://ionicframework.com/docs/components}{http://ionicframework.com/docs/components/}. Acesso em 28 Mai. 2017}
 \end{figure}
 
+\clearpage
 \subsection{Estrutura do Framework: \textit{FeathersJS}}
 
-\textit{FeathersJS} é um \textit{framework} de código livre de desenvolvimento rápido para aplicações
+\textit{FeathersJS} é um \textit{framework open-source} de desenvolvimento rápido para aplicações
 web em tempo-real escritas em JavaScript. Disponibiliza uma arquitetura simples mas poderosa
-para a construção de aplicações utilizando padrões de programação orientada a aspectos e serviços.
+para a construção de aplicações utilizando padrões de programação orientada a aspectos e serviços \cite{feathers}.
 Os principais componentes do \textit{FeathersJS} são os \textit{services}, \textit{hooks} e
 \textit{events} que são detalhados nas próximas seções.
 
@@ -587,9 +590,9 @@ pela camada de \textit{before hooks}, o método requisitado pode completar com s
 \begin{figure}[!ht]
   \centering
   \caption{Como o ciclo de uma requisição funciona no \textit{FeathersJS}}
-  \includegraphics[scale=0.45,valign=t]{imagens/feathers_request.jpeg}
-  \fonte{}
   \label{fig:feathers_request}
+  \includegraphics[scale=0.4,valign=t]{imagens/feathers_request.jpeg}
+  \fonte{Disponível em: \href{https://docs.feathersjs.com/guides/step-by-step/basic-feathers/all-about-hooks.html}{docs.feathersjs.com/guides/step-by-step/basic-feathers/all-about-hooks.html}. Acesso em 29 Mai. 2017}
 \end{figure}
 
 A utilização do \textit{FeathersJS} simplificou muito o processo de construção
@@ -599,6 +602,7 @@ serviços \autoref{fig:service_interface} torna fácil a integração com qualqu
 Nesse sentido, o \textit{FeathersJS} suporta alguns ORM que permitem uma integração
 com uma variedade de banco de dados por meio de uma interface única.
 
+% \clearpage
 \subsection{Implementação}\label{subsection:implementation}
 
 Os items da lista de tarefas da \autoref{fig:backlog} foram desenvolvidos de forma incremental.
@@ -654,21 +658,8 @@ Tem-se os seguintes critérios de aceitação:
 O banco de dados utilizado foi o MongoDB que é um banco de dados NoSQL orientado a documentos.
 Em tais bancos os dados são \textit{semiestruturados}. Dados semiestruturados
 são dados em que o esquema de representação está presente em conjunto com o dado, ou seja,
-eles são \textit{auto-descritivos}. As nomenclaturas do MongoDb diferem dos
+eles são \textit{auto-descritivos}. As nomenclaturas do MongoDB diferem dos
 bancos relacionais. A \autoref{tab:relvsmongo} apresenta como eles se relacionam.
-
-O MongoDB armazena os dados no formato chamado BJSON (Binary JSON). O BJSON extende
-o JSON\nomenclature{JSON}{JavaScript Object Notation} (JavaScript Object Notation) incluindo suporte para tipos de dados
-\texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON\nomenclature{BJSON}{Binary JavaScript Object Notation} contem
-um ou mais campos, e cada campo um valor de um tipo específico, incluíndo vetores, dados
-binários, e outros sub-documentos. A \autoref{fig:mongodocument} apresenta um
-exemplo de um documento em MongoDB.
-
-Documentos (ou \textit{documents}) que tendem a compartilhar a mesma estrutura
-são organizados como \textit{coleções} (ou \textit{collections}). Coleções são
-análogas a uma tabela em um banco de dados relacional, documentos são similares
-a registros ou linhas, e campos são parecidos com as colunas.
-
 
 \begin{table}[!ht]
   \centering
@@ -690,6 +681,18 @@ a registros ou linhas, e campos são parecidos com as colunas.
   \doautor
   \label{tab:relvsmongo}
 \end{table}
+
+O MongoDB armazena os dados no formato chamado BJSON (Binary JSON). O BJSON extende
+o JSON\nomenclature{JSON}{JavaScript Object Notation} (JavaScript Object Notation) incluindo suporte para tipos de dados
+\texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON\nomenclature{BJSON}{Binary JavaScript Object Notation} contem
+um ou mais campos, e cada campo um valor de um tipo específico, incluíndo vetores, dados
+binários, e outros sub-documentos \cite{mongodb}. A \autoref{fig:mongodocument} apresenta um
+exemplo de um documento em MongoDB.
+
+Documentos (ou \textit{documents}) que tendem a compartilhar a mesma estrutura
+são organizados como \textit{coleções} (ou \textit{collections}). Coleções são
+análogas a uma tabela em um banco de dados relacional, documentos são similares
+a registros ou linhas, e campos são parecidos com as colunas.
 
 \begin{figure}[ht]
   \caption{Exemplo de um documento em MongoDB}
@@ -744,11 +747,11 @@ com apenas uma leitura no banco de dados é possível obter toda a informação 
 O principal componente de uma aplicação desenvolvida com o \textit{FeathersJS} são os
 serviços. Os serviços foram explicados em detalhes na \autoref{subsection:feathers_services}.
 
-Cada coleção do banco de dados mostrado na \autoref{fig:database} foi desenvolvido um
+Para cada coleção do banco de dados mostrado na \autoref{fig:database} foi desenvolvido um
 serviço correspondente no \textit{FeathersJS}. Para auxiliar nesse processo, o \textit{FeathersJS} conta com
 uma ferramenta para tornar ainda mais rápido o processo de desenvolvimento de aplicações.
 Um deles é o utilitário de linha de comando \texttt{feathers} capaz de gerar
-os principais componentes do \textit{framework} como os serviços e hooks.
+os principais componentes do \textit{framework} como os \textit{services} e \textit{hooks}.
 
 A \autoref{fig:feathers_generate} ilustra a utilização da ferramenta para a geração do serviço
 \textit{question} do tipo \textit{MongoDB}. Nesse exemplo, como o serviço é do tipo MongoDB, ao
@@ -919,15 +922,15 @@ para votação, a página passa a exibir a questão, as alternativas e o botão 
 
 Para garantir a qualidade do software desenvolvido, desenvolveu-se testes
 automatizados para avaliar se o software estava sendo desenvolvido como esperado.
-
 A base para desenvolver os testes automatizados foram os critérios de aceitação de cada história de usuário.
 Alguns exemplos de critérios de aceitação foram desritos na \autoref{subsection:implementation}.
 
-As ferramentas utilizadas nesse processo foram os \textit{framework} de teste \textit{Jasmine} e o \textit{Protractor}.
+As ferramentas utilizadas nesse processo foram os \textit{frameworks} de teste \textit{Jasmine} e o \textit{Protractor} que
+são descritas nas seções seguintes.
 
 \subsubsection{Jasmine}
 
-Jasmine é um \textit{framework open-source} BDD para testar código JavaScript, que não depende de nenhum outro \textit{framework}.
+Jasmine é um \textit{framework open-source} BDD para testar código JavaScript, que não depende de nenhum outro \textit{framework} \cite{jasmine}.
 
 Um conjunto de testes ou suíte de testes no Jasmine começa com a chamada da função global
 \texttt{describe} com dois parâmetros: uma \textit{string} e uma função. A \textit{string} é o nome ou título
@@ -964,8 +967,8 @@ describe("Suite de testes", function () {
 \subsubsection{Protractor}
 
 O Protractor é um \textit{framework open-source}, desenvolvido pela Google, baseado em Node.js, para a criação de testes
-\textit{e2e} (\textit{end-to-end})
-principalmente para aplicações desenvolvidas em AngularJS. O Protractor permite simular usuários interagindo com a
+\textit{e2e} (\textit{end to end})
+principalmente para aplicações desenvolvidas em AngularJS \cite{protractor}. O Protractor permite simular usuários interagindo com a
 aplicação, em navegadores reais, como o Chrome e o Firefox. Para isso, ele disponibiliza algumas classes
 que permitem interagir com os elementos da página.
 
@@ -1018,15 +1021,15 @@ O seguinte exemplo descreve um critério de aceitação:
 
 Alguns arquivos de configuração do exemplo da \autoref{fig:testes_automatizados} foram
 omitidos para simplificação do exemplo. Antes de chegar nesse teste, um usuário é autenticado
-no sistema, satisfazendo a condição \textit{como professor} ($\ell.\,10-23$), em seguida,
-para atender que \textit{dado que o professor pode criar uma questão}, o sistema deve permitir
-que o professor consiga abrir o formulário para adicionar a questão ($\ell.\,10-23$), na ($\ell.\,10-23$)
-o é verificado se o formulário foi aberto. Continuando, na ($\ell.\,10-23$), o sistema deve
+no sistema, satisfazendo a condição \textit{``como professor''}, em seguida,
+para atender que \textit{``dado que o professor pode criar uma questão''}, o sistema deve permitir
+que o professor consiga abrir o formulário para adicionar a questão ($\ell.\,8-20$), na ($\ell.\,18$)
+o é verificado se o formulário foi aberto. Continuando, na ($\ell.\,22-40$), o sistema deve
 permitir inserir uma questão de verdadeiro e falso, quando o professor preenche todos os requisitos.
-Na ($\ell.\,10-23$) é esperado que o número de questões seja igual ao que tinha antes mais um, já que
+Na ($\ell.\,38$) é esperado que o número de questões seja igual ao que tinha antes mais um, já que
 uma questão foi adicionada. Avançando no teste, outro formulário para adicinoar questão é aberto
 para verificar que o sistema não deve permitir adicionar uma questão de múltipla escolha sem que o
-professor escolha uma alternativa como correta ($\ell.\,10-23$).
+professor escolha uma alternativa como correta ($\ell.\,42-58$).
 
 A \autoref{fig:protractor_output} exibe o relatório da execução dos teste pelo Jasmine. Outros testes
 que foram desenvolvidos envolveu a utilização dois navegadores abertos ao mesmo tempo, um simulando
@@ -1109,6 +1112,7 @@ describe('Questions Tab', () => {
   \doautor
 \end{figure}
 
+% \afterpage{\clearpage}
 \clearpage
 
 \section{Teste de Usabilidade}
@@ -1121,10 +1125,9 @@ dificuldades de uso e de criação de questões;
 
 Ou seja, trata-se um de um requisito não funcional do tipo produto (requisitos que
 especificam o comportamento do produto), mais especificamente um requisito de usabilidade.
-
 A usabilidade propõe-se a garantir que o produto seja fácil de aprender a usar, eficaz e
 agradáveis do ponto de vista do usuário \cite{rogers2013design}.
-Para \citeonline{nielsen_2012} a usabilidade é definida por cinco componentes de qualidade:
+Para \citeonline{nielsen_2012}, a usabilidade é definida por cinco componentes de qualidade:
 
 \begin{description}
   \item[Apreensiblidade (\textit{Learnability}):] facilidade para os usuários realizarem tarefas básicas
@@ -1163,7 +1166,7 @@ de tradução.
 
 O resultado do SUS é a soma individual de cada item, resultando em um número entre 0 e 100.
 Para os itens 1, 3, 5, 7 e 9 deve-se subtrair 1 de cada resposta. Para os itens 2, 4, 6, 8 e 10 deve-se
-subrair de 5 o valor de cada resposta.
+subrair de 5 o valor de cada resposta. O escore final SUS é soma de todos os itens múltiplicada por 2,5 \cite{brooke1996sus}.
 
 \subsubsection{Tarefas}
 
@@ -1186,7 +1189,7 @@ utilizadas no teste está disponível no \autoref{appendix:tasks}.
   \centering
   \caption{Exemplo de uma tarefa do teste de usabiliade}
   \label{fig:usabilidade_teste}
-  \includegraphics[scale=0.23,valign=t]{imagens/usability_task}
+  \includegraphics[scale=0.20]{imagens/usability_task}
   \doautor
 \end{figure}
 \clearpage
@@ -1393,7 +1396,7 @@ estão descritas a seguir:
     a opção para ativar a turma que ele criou.
     \item [Observações:] Todos os participantes conseguiram concluir essa tarefa sem ajuda. O botão
     para adicionar a turma foi identificado com facilidade. 1 participante não ativou a turma.
-    \item [Soluções:] Quando nenhuma turma estiver ativada, exibir uma mensagem indicando:
+    \item [Melhorias:] Quando nenhuma turma estiver ativada, exibir uma mensagem indicando:
     \textit{Você ainda não tem uma turma ativada. Ative uma turma para iniciar uma sessão de perguntas}.
     Outra solução seria ativar a primeira turma criada automaticamente e exibir uma mensagem para o usuário.
   \end{description}
@@ -1416,19 +1419,10 @@ estão descritas a seguir:
     adicione a pergunta, alternativas e marque uma opção como correta.
     \item[Observações:] Todos os participantes concluíram essa tarefa sem ajuda. 2 participantes
     tiveram um pouco de dificuldade para marcar uma alternativa como correta.
-    \item[Soluções:]
+    \item[Melhorias:]
     Colocar a descrição \textit{Correta} ao lado do botão que seleciona a questão como correta.
     Outra melhoria seria que quando o tipo de questão for de múltipla escolha, já adicionar
     duas alternativas como padrão, diminuindo assim dois cliques no processo.
-  \end{description}
-
-  \item \textbf{Tarefa \#4 Realizar frequência dos estudantes}
-  \begin{description}
-    \item[Esperado:] Nessa tarefa, o botão de frequência está na aba \textit{Aula}. Seguindo as tarefas de forma
-    sequencial, o professor estará na aba \textit{Questões}. Nesse sentido, espera-se
-    que o professor explore a aba \textit{Aula} e identifique o botão \textit{Frequência}.
-    \item[Observações:] Naturalmente os participantes exploraram a aba \textit{Aula}, identificaram o botão de
-    frequência e iniciaram processo de frequência.
   \end{description}
 
   \item \textbf{Tarefa \#5 Acessar a sala como estudante}
@@ -1438,17 +1432,8 @@ estão descritas a seguir:
     espera-se que ao ler a mensagem ele coloque o código de identificação de um estudante adicionado na tarefa 2.
     \item [Observações:] 1 participante precisou de ajuda para completar a tarefa. Uma observação de um
     participante foi que ele estava precisando digitar o código da turma a todo instante.
-    \item [Soluções:] Quando um estudante entrar em uma turma com um código de acesso, o sistema
+    \item [Melhorias:] Quando um estudante entrar em uma turma com um código de acesso, o sistema
     deve guardar o código em uma lista de acessos recentes para facilitar os acessos futuros.
-  \end{description}
-
-  \item \textbf{Tarefa \#6 Responder a frequência}
-  \begin{description}
-    \item [Esperado:] Já identificado no aplicativo do estudante, espera-se que o professor identifique
-    o botão \textit{Responder chamada} e entre com o código gerado para a frequência na tarefa 4.
-    Por último, espera-se que ele verifique que no software do professor, o sistema identificou
-    que um aluno realizou a frequência.
-    \item [Observações:] Todos os participantes concluíram essa tarefa sem ajuda.
   \end{description}
 
   \item \textbf{Tarefa \#7 Iniciar sessão de perguntas}
@@ -1460,37 +1445,15 @@ estão descritas a seguir:
     na aba \textit{Aula}, era exibido o aviso - \textit{Nenhuma sessão encerrada}, fazendo
     com que o usuário entende-se que uma sessão deveria ser iniciada em algum lugar na aba \textit{Aula}, já que
     a mesma fazia referência as sessões encerradas.
-    \item[Soluções:] Na aba \textit{Aula} quando um aviso indicando que:
+    \item[Melhorias:] Na aba \textit{Aula} quando um aviso indicando que:
     \textit{Para iniciar uma sessão, na aba QUESTÕES selecione uma ou mais questões e clique em INICIAR SESSÃO}.
     Na aba \textit{Questões}, quando o professor clicar no botão \textit{INICIAR SESSÃO} sem nenhuma
     questão selecionada, deve aparecer uma mensagem indicando: \textit{Selecione uma ou mais questões para iniciar uma sessão}.
   \end{description}
 
-  \item \textbf{Tarefa \#8 Responder questão}
+  \item \textbf{Tarefas \#4, 6, 8, 9, 10 e 11}
   \begin{description}
-    \item [Esperado:] Com a questão já ativada, o professor deve facilmente escolher uma alternativa e
-    enviar a resposta utilizando o aplicativo do estudante.
-    \item [Observação:] Todos os participantes concluíram essa tarefa sem ajuda.
-  \end{description}
-
-  \item \textbf{Tarefa \#9 Finalizar sessão de perguntas}
-  \begin{description}
-    \item  [Esperado:]  Espera-se que o professor explore as opções de pausar, mostrar a resposta correta e mostrar
-    o resultado da votação.
-    \item [Observação:] Todos os participantes concluíram essa tarefa sem ajuda.
-  \end{description}
-
-  \item \textbf{Tarefa \#10 Encerrar sessão de perguntas}
-  \begin{description}
-    \item  [Esperado:] Espera-se que o professor identifique a opção de encerrar a sessão de perguntas.
-    \item [Observação:] Todos os participantes concluíram essa tarefa sem ajuda.
-  \end{description}
-
-  \item \textbf{Tarefa \#11 Verificar resposta dos estudantes}
-  \begin{description}
-    \item  [Esperado:] Encerrando a sessão de perguntas, a sessão encerrada deve ser listada no software.
-    Espera-se que o professor clique na opção detalhes da sessão listada e explore as respostas dos estudantes.
-    \item [Observação:] Todos os participantes concluíram essa tarefa sem ajuda.
+    \item [Observação:] Todos os participantes concluíram essas tarefas com sucesso e sem ajuda.
   \end{description}
 \end{enumerate}
 
@@ -1512,6 +1475,9 @@ eventualmente levantar os problemas encontrados com os desenvolvedores.
 
 Realizamos um teste beta para testar funcionamento do aplicativo do estudante em diferentes
 \textit{smartphones} e/ou computadores e o uso do software do professor na sala de aula.
+Para isso, uma versão do sistema operacional Android do aplicativo foi gerada e disponibilizada na
+loja na loja online da Google para distribuição de aplicações, Google Play\footnote{Endereço do aplicativo no Google Play: \href{https://play.google.com/store/apps/details?id=apps.pedrosobral.rsa}{play.google.com/store/apps/details?id=apps.pedrosobral.rsa}}.
+Dessa forma, tanto o professor quanto os estudantes poderam instalar o aplicativo nos seus aparelhos.
 
 \subsection{Participantes}
 
@@ -1519,7 +1485,7 @@ O teste foi realizado na disciplina \textit{Modelagem e Simulação} do curso de
 em Engenharia de Computação da Universidade Federal do Vale do São Francisco (UNIVASF).
 O objetivo geral dessa disciplina é ``tornar os alunos capazes de construir sistemas de
 simulação, de validar e verificar os modelos, e de validar os resultados da simulação'' \cite{ppcComputacao}.
-O teste foi realizado no dia 17 de julho de 2017, no campus Juazeiro - BA.
+O teste foi realizado no dia 19 de julho de 2017, no campus Juazeiro - BA.
 
 A turma era composta por um professor e 13 alunos, com faixa etária entre 20 e 27 anos, 3 (23\%)
 alunos do sexo feminino e 10 (74\%) alunos do sexo masculino. Todos os estudantes
