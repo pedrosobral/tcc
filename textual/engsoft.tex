@@ -188,11 +188,11 @@ colocar o código de identificação do professor.
 
 O \textit{PollEverywhere} é um sistema de resposta mais genérico, possibilitando fazer votações em
 shows e apresentações diversas. Possibilita integração com ferramentas de apresentação
-como o \textit{PowerPoint}. Outra característica é a possibilidade dos usuários votarem por SMS.
+como o \textit{PowerPoint}. Outra característica é a possibilidade dos usuários votarem por SMS\nomenclature{SMS}{Short Message Service}.
 Além dos tipos de questões básicas, o \textit{PollEverywhere} permite criar nuvem de palavras e
 questões com imagens clicáveis.
 
-A conta do usuário é associado com uma URL, em que é usada para os participantes
+A conta do usuário é associado com uma URL\nomenclature{URL}{Uniform Resource Locator}, em que é usada para os participantes
 da votação entrarem e votarem.
 
 \subsubsection{\textit{TopHat}}
@@ -241,8 +241,8 @@ extraídos um conjunto de requisitos iniciais para o sistema. Os requisitos
 funcionais gerados pela análise dos competidores foram então descritos como histórias de usuário.
 
 \begin{description}
-\item[Integração com sistemas LMS]: O sistema deve permitir integração com
-sistemas LMS (preferencialmente Moodle);
+\item[Integração com sistemas LMS\nomenclature{LMS}{Learning Management System}]: O sistema deve permitir integração com
+sistemas LMS (Amadeus, Moodle);
 \item[Todas as plataformas:] é muito importante que o sistema seja capaz
 de funcionar em smartphones, tables e computadores independentemente
 do sistema operacional.
@@ -257,7 +257,7 @@ e limpar uma votação em andamento;
 \item[Controle de frequência:] o sistema gera um código aleatório ou uma
 questão trivial, em que o professor pode solicitar que os estudantes
 respondam, contando como controle de frequência. Os dados devem ser
-facilmente exportados para CSV.
+facilmente exportados para CSV\nomenclature{CSV}{Comma-separated values}.
 \item[Tempo-real:] No momento da votação, o professor pode escolher entre
 apresentar o resultado em tempo-real, quando todos votarem, ou quando
 determinado;
@@ -359,7 +359,7 @@ usar o \textit{Ionic} como \textit{framework} para o desenvolvimento do \textit{
 Um aplicativo desenvolvido no \textit{Ionic} é composto por um conjunto de pages ou páginas.
 Cada página é composta por alguns arquivos. Um arquivo é responsável pelo
 elemento visual da página, desenvolvido em HTML. Existe o arquivo de estilos da página,
-desenvolvido em SCSS. O arquivo principal é o responsável por controlar a página, desenvolvido
+desenvolvido em CSS. O arquivo principal é o responsável por controlar a página, desenvolvido
 em TypeScript.
 
 As Figuras \ref{fig:hello_ionic_ts} e \ref{fig:hello_ionic_html} são um exemplo básico de
@@ -479,7 +479,8 @@ destruição de dados. Esse conjunto de operações ou funcionalidades é conhec
 CRUD (\textit{Create, Read, Update, Delete}).
 
 Os serviços no \textit{FeathersJS} expõem uma interface uniforme de acesso, permitindo
-assim fornecer uma única API tanto para chamadas HTTP REST e \textit{websockets}.
+assim fornecer uma única API\nomenclature{API}{Application Programming Interface} tanto para chamadas
+HTTP\nomenclature{HTTP}{Hypertext Transfer Protocol} REST\nomenclature{REST}{Representational State Transfer} e \textit{websockets}.
 Os verbos HTTP (GET, POST, PUT, PATCH e DELETE) têm a correspondência com
 os métodos de um serviço no \textit{\textit{FeathersJS}} listados na \autoref{fig:service_interface}.
 
@@ -518,7 +519,7 @@ Como eles têm acesso ao objetos de uma requisição (\texttt{req} e \texttt{res
 para política de controle de acesso da aplicação, registro de eventos, enviar
 notificações, adicionar propriedades e muito mais.
 
-Essa abordagem é conhecida como Programação Orientada a Aspectos (POA), que permite
+Essa abordagem é conhecida como Programação Orientada a Aspectos, que permite
 a separação de propriedades ortogonais (ou que não fazem parte da funcionalidade
 principal) dos componentes funcionais de uma forma natural e concisa.
 
@@ -612,7 +613,8 @@ Os critérios de aceitação geralmente definem o comportamento esperado da func
 Dessa forma, eles são úteis para definir quando uma história foi finalizada e implementada de forma correta.
 
 Os critérios de aceitção foram escritos usando o formato utilizado no desenvolvimento dirigido por
-comportamento (\textit{Behavior-Driven Development (BDD)}). Assim, descreve-se o comportamento no seguinte formato:
+comportamento (\textit{Behavior-Driven Development (BDD)}\nomenclature{BDD}{Behavior-Driven Development}).
+No BDD descreve-se o comportamento no seguinte formato:
 
 \begin{description}
   \item[Dado que (\textit{Given}):] determinadas pré-condições são atendidadas;
@@ -662,8 +664,8 @@ eles são \textit{auto-descritivos}. As nomenclaturas do MongoDb diferem dos
 bancos relacionais. A \autoref{tab:relvsmongo} apresenta como eles se relacionam.
 
 O MongoDB armazena os dados no formato chamado BJSON (Binary JSON). O BJSON extende
-o JSON (JavaScript Object Notation) incluindo suporte para tipos de dados
-\texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON contem
+o JSON\nomenclature{JSON}{JavaScript Object Notation} (JavaScript Object Notation) incluindo suporte para tipos de dados
+\texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON\nomenclature{BJSON}{Binary JavaScript Object Notation} contem
 um ou mais campos, e cada campo um valor de um tipo específico, incluíndo vetores, dados
 binários, e outros sub-documentos. A \autoref{fig:mongodocument} apresenta um
 exemplo de um documento em MongoDB.
@@ -745,8 +747,8 @@ com apenas uma leitura no banco de dados é possível obter toda a informação 
 
 \subsection{Servidor: FeathersJS}
 
-O principal componente de uma aplicação desenvolvida com o \textit{FeathersJS} é um
-serviço. Os serviços foram explicados em detalhes na \autoref{subsection:feathers_services}.
+O principal componente de uma aplicação desenvolvida com o \textit{FeathersJS} são os
+serviços. Os serviços foram explicados em detalhes na \autoref{subsection:feathers_services}.
 
 Cada coleção do banco de dados mostrado na \autoref{fig:database} foi desenvolvido um
 serviço correspondente no \textit{FeathersJS}. Para auxiliar nesse processo, o \textit{FeathersJS} conta com
@@ -1145,7 +1147,7 @@ Para \citeonline{nielsen_2012} a usabilidade é definida por cinco componentes d
 Para verificar a usabilidade do software desenvolvido, realizou-se testes de usabilidade, com o
 objetivo de testar o quão usável é o software. Para isso, utilizou-se o seguinte método: teste de usabilidade
 que incluia a observação dos usuário utilizando o software e também a gravação em vídeo da tela do
-software. Além disso, um questionário de satisfação SUS (\textit{System Usability Scale}) do usuário foi utilizado para descobrir como
+software. Além disso, um questionário de satisfação SUS\nomenclature{SUS}{System Usability Scale} (\textit{System Usability Scale}) do usuário foi utilizado para descobrir como
 os usuários se sentiram usando o software.
 
 \subsubsection{Questionário de satisfação: SUS}\label{sub:sus}
