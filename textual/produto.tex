@@ -2,21 +2,29 @@
 
 As principais tecnologias, ferramentas e métodos foram descritos nos capítulos
 anteriores. Como resultado final foi desenvolvido um sistema de resposta
-em sala de aula denominado \textit{Resposta em Sala de Aula} (RSA).
+em sala de aula denominado \textit{Resposta em Sala de Aula} (RSA) \autoref{fig:overview}.
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Resposta em Sala de Aula (RSA)}
+  \includegraphics[scale=.40]{imagens/telas/overview}
+  \doautor
+  \label{fig:overview}
+\end{figure}
 
 \section{Aplicação web para o Professor}
 
 A \autoref{fig:main_window} ilustra a tela inicial da aplicação web para o professor.
-Nela é possível perceber as três abas principais do sistema. A primeira \textit{Questões} que
+Nela é possível perceber as três abas principais do sistema \textit{Questões, Aula} e \textit{Turmas}. A primeira \textit{Questões} que
 está selecionada, permite ao professor gerir um banco de questões criadas, iniciar uma
 sessão com questões selecionadas e categorizar as questões para uma melhor organização das mesmas.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \caption{Aba \textit{Questões}}
-  \includegraphics[scale=.40]{imagens/telas/main_window}
-  \doautor
   \label{fig:main_window}
+  \includegraphics[scale=.30]{imagens/telas/main_window}
+  \doautor
 \end{figure}
 
 \subsection{Frequência dos alunos}
@@ -26,36 +34,36 @@ Um dos requisitos do sistema era permitir ao professor realizar a frequência do
 pelo aplicativo. O sistema gera um código aleatório de quatro digitos e permite aos estudantes
 submeterem esse código pelo aplicativo. O professor pode ativar a frequência
 clicando no botão \textit{Frequência} no canto superior direito da aba \textit{Questões} (\autoref{fig:main_window}).
-Em seguida, o sistema muda para a aba \textit{Ao Vivo}, tendo como resultado a \autoref{fig:live_freq}.
+Em seguida, o sistema muda para a aba \textit{Aula}, tendo como resultado a \autoref{fig:live_freq}.
 Nela é possível perceber o código de aleatório de quatro dígitos que foi gerado e alguns botões de ação no canto
 inferior direto, permitindo ao professor encerrar a frequência por exemplo.
 
 \begin{figure}[ht]
   \centering
   \caption{Página para a realizar a frequência dos estudantes}
-  \includegraphics[scale=.45]{imagens/telas/live_freq}
-  \doautor
   \label{fig:live_freq}
+  \includegraphics[scale=.30]{imagens/telas/live_freq}
+  \doautor
 \end{figure}
 
 Posteriormente, o professor pode acessar a lista de frequência por meio do aba \textit{Turmas},
-clicando para cada turma a opção de \textit{atividades}, \autoref{fig:atividades}. A \autoref{fig:list_freq} exibe a
-lista de frequência em detalhes.
+clicando para cada turma a opção de \textit{Frequências}, \autoref{fig:atividades}. A \autoref{fig:list_freq} exibe a
+lista de frequência em detalhes. Nela é possível editar a lista de presentes.
 
 \begin{figure}[ht]
   \centering
-  \caption{Página para a realizar a frequência dos estudantes}
-  \includegraphics[scale=.45]{imagens/telas/atividades}
-  \doautor
+  \caption{Página listando as frequências realizadas de uma turma}
   \label{fig:atividades}
+  \includegraphics[scale=.35]{imagens/telas/atividades}
+  \doautor
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \caption{Página para a realizar a frequência dos estudantes}
-  \includegraphics[scale=.45]{imagens/telas/list_freq}
-  \doautor
+  \caption{Detalhes de uma frequência realizada}
   \label{fig:list_freq}
+  \includegraphics[scale=.35]{imagens/telas/list_freq}
+  \doautor
 \end{figure}
 
 
@@ -64,6 +72,7 @@ lista de frequência em detalhes.
 A \autoref{fig:new_question} exibe o formulário para o cadastro de uma nova questão.
 A aplicação permite a criação de questões de múltipla escolha, verdadeiro e falso e questão aberta.
 Em questões do tipo múltipla escolha o professor deve indicar uma alternativa como correta.
+Também a possibilidade de adicionar a URL de uma imagem, que vai ser visível apenas no aplicativo dos estudantes.
 
 \begin{figure}[ht]
   \centering
@@ -88,8 +97,8 @@ digitar além do código da turma, o código de identificação de cada um que f
 
 \begin{figure}[ht]
   \centering
-  \caption{Aba \textit{Turmas}}
-  \includegraphics[scale=.4]{imagens/telas/admin_classes}
+  \caption{Detalhes da aba \textit{Turmas}}
+  \includegraphics[scale=.42]{imagens/telas/admin_classes}
   \doautor
   \label{fig:admin_classes}
 \end{figure}
@@ -120,28 +129,19 @@ primeiro o nome do estudante e depois o código de identificação.
 
 \begin{figure}[ht]
 \caption{Exemplo de arquivo CSV válido para importar uma lista de estudantes}
-\begin{lstlisting}[language=JavaScript]
-  name,id
-  Alexandre Gabriel Daniel Freitas,42160120863
-  Lucas Elias Antonio Mendes,83562725728
-  Igor Isaac Alves,24356903986
-  Diego Marcelo Leonardo Ribeiro,87528468061
-  Marcos Vinicius Diego da Silva,69525285553
-  Arthur Ryan Barbosa,45863716258
-  Elias Raul Calebe Cardoso,17505265300
-  Paulo Thiago Costa,55883747540
-  Carlos Eduardo Henry Cardoso,24051360318
-  Ricardo Giovanni Bryan Pereira,84740254433
-  Helena Ester Rayssa Costa,84617846859
-  Maria Bruna Cardoso,45713856925
-  Stefany Mariana Sophie Pereira,65113718408
-  Isabel Nina Gomes,16108646020
-\end{lstlisting}
-  \doautor
 \label{fig:import_csv}
+\begin{lstlisting}[language=JavaScript]
+  name, id
+  Aluno 1, 4216
+  Aluno 2, 8356
+  Aluno 3, 2435
+  Aluno 4, 8752
+  Aluno 5, 6952
+\end{lstlisting}
+\doautor
 \end{figure}
 
-\subsection{Sessão de questões: Aba Ao Vivo}
+\subsection{Sessão de questões: Aba Aula}
 
 No sistema tem-se o conceito de \textit{Sessão de questões}, que é
 simplesmente um conjunto de questões selecionadas pelo professor
@@ -152,20 +152,21 @@ uma ou mais questões que deseja apresentar para os estudantes e
 em seguida clicar no botão \textit{INICIAR SESSÃO}. A \autoref{fig:session_details}
 destaca da aba \textit{Questões} um exemplo de duas questões selecionadas e o botão
 \textit{INICIAR SESSÃO} no canto superior direto. Quando o professor inicia uma sessão,
-o sistema redireciona para a aba \textit{Ao Vivo} projetando a primeira questão selecionada (\autoref{fig:live})
+o sistema redireciona para a aba \textit{Aula} projetando a primeira questão selecionada, como
+exibido na \autoref{fig:live}.
 
 \begin{figure}[ht]
   \centering
   \caption{Aba \textit{Questões}}
+  \label{fig:session_details}
   \includegraphics[scale=.50]{imagens/telas/session_details}
   \doautor
-  \label{fig:session_details}
 \end{figure}
 
 A \autoref{fig:live} ilustra uma sessão iniciada de uma questão. Uma questão quando
 iniciada ainda não fica disponível para os estudantes responderem, que está indicado
 na parte superior da tela com o texto \textit{VOTAÇÃO INDISPONÍVEL}. Nessa mesma parte,
-o código para acesso da sala fica visível para os estudantes, no caso \textit{ENGSOFT2017}.
+o código para acesso da sala fica visível para os estudantes, no caso \textit{MDS2017}.
 
 No canto inferior direito da \autoref{fig:live}, o professor tem acesso a um conjunto de
 funcionalidades para controlar a sessão. A opção \textit{Ativar votação}, quando selecionada
@@ -177,21 +178,23 @@ No canto superior direito da tela um número é incrementado indicando a quantid
 alunos que já responderam a questão. A \autoref{fig:live_answers} ilustra quando
 todas essas opções estão selecionadas.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
-  \caption{Adicionar estudantes em uma turma}
-  \includegraphics[scale=.4]{imagens/telas/live}
-  \doautor
+  \caption{Tela exibindo uma questão ainda indisponível para os estudantes}
   \label{fig:live}
+  \includegraphics[scale=.35]{imagens/telas/live}
+  \doautor
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
-  \caption{Adicionar estudantes em uma turma}
-  \includegraphics[scale=.4]{imagens/telas/live_answers}
-  \doautor
+  \caption{Tela com todas as opções de controle ativadas}
   \label{fig:live_answers}
+  \includegraphics[scale=.35]{imagens/telas/live_answers}
+  \doautor
 \end{figure}
+
+\clearpage
 
 \subsubsection{Sessões encerradas}
 
@@ -206,16 +209,16 @@ desempenho de cada estudante por questão e a percentagem de acerto na sessão.
 
 \begin{figure}[ht]
   \centering
-  \caption{Adicionar estudantes em uma turma}
-  \includegraphics[scale=.4]{imagens/telas/sessions}
+  \caption{Tela listando as sessões encerradas}
+  \includegraphics[scale=.42]{imagens/telas/sessions}
   \doautor
   \label{fig:sessions}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \caption{Adicionar estudantes em uma turma}
-  \includegraphics[scale=.4]{imagens/telas/session_students_details}
+  \caption{Detalhes de uma sessão encerrada: resposta por questão e por estudantes}
+  \includegraphics[scale=.35]{imagens/telas/session_students_details}
   \doautor
   \label{fig:session_students_details}
 \end{figure}
