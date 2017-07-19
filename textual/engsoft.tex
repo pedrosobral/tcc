@@ -90,8 +90,8 @@ os métodos ágeis, que têm como filosofia o manifesto ágil \cite{Sommerville2
 Esse manifesto afirma \cite{agilemanifesto}:
 
 \begin{citacao}
-  Estamos descrobrindo melhores maneiras de desenvolver softwares, fazendo-o e ajudando
-  outros a fazê-lo. Através dessse trabalho, valorizamos mais:\\\\
+  Estamos descobrindo melhores maneiras de desenvolver softwares, fazendo-o e ajudando
+  outros a fazê-lo. Através desse trabalho, valorizamos mais:\\\\
   \begin{minipage}{15cm}
     \begin{itemize}
       \item Indivíduos e interações do que processos e ferramentas
@@ -240,7 +240,7 @@ A seguir descreve-se os requisitos gerados:
 \item[Integração com sistemas LMS\nomenclature{LMS}{Learning Management System}]: O sistema deve permitir integração com
 sistemas LMS (Amadeus, Moodle);
 \item[Todas as plataformas:] é muito importante que o sistema seja capaz
-de funcionar em smartphones, tables e computadores independentemente
+de funcionar em \textit{smartphones}, \textit{tablets} e computadores independentemente
 do sistema operacional.
 \item[Questões abertas, verdadeiro/falso e de múltipla-escolha:] O sistema
 deve fornecer pelo menos esses três tipos básico de questões;
@@ -269,7 +269,7 @@ identificar o ambiente do professor, usado para que os alunos respondam.
 
 A metodologia ágil de software, \textit{eXtreme Programming (XP)}, introduziu a
 prática de expressar os requisitos de software na forma de \textit{histórias de usuário},
-que são descricões informais do que  o sistema deve fazer, evitando qualquer terminologia técnica \cite{Sommerville2006}.
+que são descrições informais do que  o sistema deve fazer, evitando qualquer terminologia técnica \cite{Sommerville2006}.
 
 As histórias de usuário (\autoref{fig:backlog}), formaram a lista de tarefas do projeto. Essa
 lista de tarefas foi então priorizada, de forma que, por exemplo, desenvolver a arquitetura
@@ -300,7 +300,7 @@ categorizar as questões para permitir um agrupamento de questões teve uma prio
   \item[JavaScript:] é uma linguagem de programação leve, interpretada e orientada a objetos com funções de primeira classe
   (funções no JavaScript podem ser passadas como argumento para outras funções, pode ser o valor retornado por outras funções e ainda
   podem ser atribuídas para variáveis).
-  Ela é uma linguagem de scripting baseada em protótipos, multi-paradigma e dinâmica, suportando os estilos orientado a objetos, imperativo e funcional.
+  Ela é uma linguagem de \textit{scripting} baseada em protótipos, multi-paradigma e dinâmica, suportando os estilos orientado a objetos, imperativo e funcional.
   Uma das implementações ou \textit{engine} mais populares de JavaScript é o V8 da Google que
   é utilizada pelo navegador Google Chrome e também pelo Opera \cite{javascript}.
   \item[Node.js:] é uma plataforma construída sobre o \textit{engine} V8 da Google
@@ -352,7 +352,7 @@ usar o \textit{Ionic} como \textit{framework} para o desenvolvimento do \textit{
 
 \subsubsection{Pages}
 
-Um aplicativo desenvolvido no \textit{Ionic} é composto por um conjunto de pages ou páginas.
+Um aplicativo desenvolvido no \textit{Ionic} é composto por um conjunto de \textit{pages} ou páginas.
 Cada página é composta por alguns arquivos. Um arquivo é responsável pelo
 elemento visual da página, desenvolvido em HTML. Existe o arquivo de estilos da página,
 desenvolvido em CSS. O arquivo principal é o responsável por controlar a página, desenvolvido
@@ -505,7 +505,7 @@ const meuServico = {
 
 \subsubsection{Hooks}
 
-\textit{Hooks} são técnicamente \textit{middleware} ou funções que têm acesso aos
+\textit{Hooks} são técnicamente um \textit{middleware} ou funções que têm acesso aos
 objetos de solicitação (\texttt{req}) e resposta (\texttt{res}).
 Dessa forma os \textit{hooks} podem fazer mudanças nos objetos de solicitação e resposta.
 O \textit{\textit{FeathersJS}} permite registrar \textit{hooks} antes (\textit{before}), depois
@@ -605,17 +605,17 @@ com uma variedade de banco de dados por meio de uma interface única.
 % \clearpage
 \subsection{Implementação}\label{subsection:implementation}
 
-Os items da lista de tarefas da \autoref{fig:backlog} foram desenvolvidos de forma incremental.
+Os itens da lista de tarefas da \autoref{fig:backlog} foram desenvolvidos de forma incremental.
 Para cada história de usuário desenvolvida, procurava-se desenvolver os critérios de aceitação da mesma.
 Os critérios de aceitação geralmente definem o comportamento esperado da funcionalidade desenvolvida pela história.
 Dessa forma, eles são úteis para definir quando uma história foi finalizada e implementada de forma correta.
 
-Os critérios de aceitção foram escritos usando o formato utilizado no desenvolvimento dirigido por
+Os critérios de aceitação foram escritos usando o formato utilizado no desenvolvimento dirigido por
 comportamento (\textit{Behavior-Driven Development (BDD)}\nomenclature{BDD}{Behavior-Driven Development}).
 No BDD descreve-se o comportamento no seguinte formato:
 
 \begin{description}
-  \item[Dado que (\textit{Given}):] determinadas pré-condições são atendidadas;
+  \item[Dado que (\textit{Given}):] determinadas pré-condições são atendidas;
   \item[Quando (\textit{When}):] um determinado evento ocorre;
   \item[Então (\textit{Then}):] isso deve acontecer.
 \end{description}
@@ -658,7 +658,7 @@ Tem-se os seguintes critérios de aceitação:
 O banco de dados utilizado foi o MongoDB que é um banco de dados NoSQL orientado a documentos.
 Em tais bancos os dados são \textit{semiestruturados}. Dados semiestruturados
 são dados em que o esquema de representação está presente em conjunto com o dado, ou seja,
-eles são \textit{auto-descritivos}. As nomenclaturas do MongoDB diferem dos
+eles são \textit{autodescritivos}. As nomenclaturas do MongoDB diferem dos
 bancos relacionais. A \autoref{tab:relvsmongo} apresenta como eles se relacionam.
 
 \begin{table}[!ht]
@@ -685,7 +685,7 @@ bancos relacionais. A \autoref{tab:relvsmongo} apresenta como eles se relacionam
 O MongoDB armazena os dados no formato chamado BJSON (Binary JSON). O BJSON extende
 o JSON\nomenclature{JSON}{JavaScript Object Notation} (JavaScript Object Notation) incluindo suporte para tipos de dados
 \texttt{int, long, date, floating point} e \texttt{decimal128}. Um documento BJSON\nomenclature{BJSON}{Binary JavaScript Object Notation} contem
-um ou mais campos, e cada campo um valor de um tipo específico, incluíndo vetores, dados
+um ou mais campos, e cada campo um valor de um tipo específico, incluindo vetores, dados
 binários, e outros sub-documentos \cite{mongodb}. A \autoref{fig:mongodocument} apresenta um
 exemplo de um documento em MongoDB.
 
@@ -923,7 +923,7 @@ para votação, a página passa a exibir a questão, as alternativas e o botão 
 Para garantir a qualidade do software desenvolvido, desenvolveu-se testes
 automatizados para avaliar se o software estava sendo desenvolvido como esperado.
 A base para desenvolver os testes automatizados foram os critérios de aceitação de cada história de usuário.
-Alguns exemplos de critérios de aceitação foram desritos na \autoref{subsection:implementation}.
+Alguns exemplos de critérios de aceitação foram descritos na \autoref{subsection:implementation}.
 
 As ferramentas utilizadas nesse processo foram os \textit{frameworks} de teste \textit{Jasmine} e o \textit{Protractor} que
 são descritas nas seções seguintes.
@@ -1027,7 +1027,7 @@ que o professor consiga abrir o formulário para adicionar a questão ($\ell.\,8
 o é verificado se o formulário foi aberto. Continuando, na ($\ell.\,22-40$), o sistema deve
 permitir inserir uma questão de verdadeiro e falso, quando o professor preenche todos os requisitos.
 Na ($\ell.\,38$) é esperado que o número de questões seja igual ao que tinha antes mais um, já que
-uma questão foi adicionada. Avançando no teste, outro formulário para adicinoar questão é aberto
+uma questão foi adicionada. Avançando no teste, outro formulário para adicionar questão é aberto
 para verificar que o sistema não deve permitir adicionar uma questão de múltipla escolha sem que o
 professor escolha uma alternativa como correta ($\ell.\,42-58$).
 
